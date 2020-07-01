@@ -1,6 +1,98 @@
 @charset "ISO-8859-1";
 
-body{
-	background:#a2d2fb;
+body {
+	margin: 0;
+	padding: 0;
+	background: url(../imagenes/fondo2.jpg) no-repeat center top;
+	font-family: sans-serif;
+	height: 100vh;
 }
 
+.header{
+	background:#ffffff;
+	color:black;
+	
+}
+ .header a{
+ color: black;
+ text-decoration:none;
+ 
+ }
+
+.logo-nav-conteiner{
+	display:flex;
+	justify-content: space-between;
+	aligin-items:center;
+}
+
+.logo{
+	letter-spacing:3.3px;
+	font-size:1.8em;
+}
+
+
+.logo-container{
+	display:flex;
+	justify-content: space-between
+}
+
+.navegacion ul{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+ .navegacion ul li{
+  display: inline-block
+ }
+ 
+    .navegacion ul li a{
+      display: block;
+      padding:0.5rem 1rem;
+      transition: all 0.3s linear;
+      font-size:1.3rem;
+      
+    }
+      
+      .navegacion ul li a:hover{
+      background: #ccc;
+      }
+
+
+.rc .tati{
+	border-radius:5%;
+	background-color: #6ED0D6;
+	width: 50%;
+}
+.rc .ama{
+	top:20px;
+	border-radius:5%;
+	background-color: #6ED0D6;
+	width: 50%;
+}
+.rc .sebas{
+	border-radius:5%;
+	background-color: #6ED0D6;
+	width: 50%;
+}
+#continer{
+
+	width: 100%;
+
+	background-color: #6ED0D6;
+}
+
+.regreso input[type="submit"] {
+	border: none;
+	outline: none;
+	height: 40px;
+	background: #2eefa2;
+	color: #fff;
+	font-size: 18px;
+	border-radius: 20px;
+}
+
+.regreso input[type="submit"]:hover {
+	cursor: pointer;
+	background: #fcbd3a;
+	color: #000;
+}

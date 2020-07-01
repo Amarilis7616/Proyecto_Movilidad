@@ -1,0 +1,50 @@
+@charset "ISO-8859-1";
+
+.header{
+	background:#ffffff;
+	color:black;
+	
+}
+ .header a{
+ color: black;
+ text-decoration:none;
+ 
+ }
+
+.logo-nav-conteiner{
+	display:flex;
+	justify-content: space-between;
+	aligin-items:center;
+}
+
+.logo{
+	letter-spacing:3.3px;
+	font-size:1.8em;
+}
+
+
+.logo-container{
+	display:flex;
+	justify-content: space-between
+}
+
+.navegacion ul{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+ .navegacion ul li{
+  display: inline-block
+ }
+ 
+    .navegacion ul li a{
+      display: block;
+      padding:0.5rem 1rem;
+      transition: all 0.3s linear;
+      font-size:1.3rem;
+      
+    }
+      
+      .navegacion ul li a:hover{
+      background: #ccc;
+      }

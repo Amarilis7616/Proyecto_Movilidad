@@ -61,15 +61,16 @@
 	border: none;
 	outline: none;
 	height: 40px;
-	background: #2eefa2;
+	background: #ff80c0;
 	color: #fff;
 	font-size: 18px;
 	border-radius: 20px;
 }
 
 .cuadro input[type="submit"]:hover {
+	
 	cursor: pointer;
-	background: #fcbd3a;
+	background: #669bf4;
 	color: #000;
 }
 
@@ -77,11 +78,11 @@
 	text-decoration: none;
 	font-size: 12px;
 	line-height: 20px;
-	color: darkgrey;
+	color: #000000;
 }
 
 .cuadro a:hover {
-	color: #fff;
+	color: #ff80c0;
 }
 
 
