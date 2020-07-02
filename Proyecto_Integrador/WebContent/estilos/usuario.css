@@ -3,14 +3,13 @@
 	margin: 0;
 	padding: 0;
 	background: url(../imagenes/login.jpg) no-repeat center top;
-	background-size: cover;
 	font-family: sans-serif;
 	height: 100vh;
 }
 
 .cuadro {
 	width: 320px;
-	height: 380px;
+	height: 490px;
 	background: #a4c6f4;
 	color: #000000;
 	top: 50%;
@@ -59,7 +58,7 @@
 .cuadro input[type="submit"] {
 	border: none;
 	outline: none;
-	height: 30px;
+	height: 40px;
 	background: #ff80c0;
 	color: #fff;
 	font-size: 18px;
@@ -83,8 +82,3 @@
 .cuadro a:hover {
 	color: #ff80c0;
 }
-
-
-
-
-
