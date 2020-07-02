@@ -1,5 +1,13 @@
 @charset "ISO-8859-1";
 
+.fondo {
+	margin: 0;
+	padding: 0;
+	background: url(../imagenes/fondo3.jpg) no-repeat center top;
+	background-size: cover;
+	font-family: sans-serif;
+	height: 100vh;
+}
 .header{
 	background:#ffffff;
 	color:black;
