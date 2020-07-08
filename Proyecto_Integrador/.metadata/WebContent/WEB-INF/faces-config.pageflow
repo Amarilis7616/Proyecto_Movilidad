@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15938938081090" configfile="/Proyecto_Integrador/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="Index.xhtml" x="72" y="156" id="pf159389433545611" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" outlinks="pf159389433545612" inlinks="pf159389440796614 pf159389440796615" path="/Index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="Contacto.xhtml" x="372" y="144" id="pf159389433545613" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf159389440796614 pf159389440796616" inlinks="pf159389433545612" path="/Contacto.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="IniciarSesion.xhtml" x="216" y="12" id="pf159389440796617" referenceLink="//@navigationRule.3/@fromViewId|" outlinks="pf159389440796615" inlinks="pf159389440796616" path="/IniciarSesion.xhtml"/>
+  <links id="pf159389433545612" target="pf159389433545613" source="pf159389433545611" outcome="Ver información"/>
+  <links id="pf159389440796614" target="pf159389433545611" source="pf159389433545613" outcome="Navegar"/>
+  <links id="pf159389440796616" target="pf159389440796617" source="pf159389433545613" outcome="Iniciar"/>
+  <links id="pf159389440796615" target="pf159389433545611" source="pf159389440796617" outcome="Regresar a inicio"/>
+</pageflow:Pageflow>

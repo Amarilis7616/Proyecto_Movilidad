@@ -4,5 +4,36 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_3.xsd"
     version="2.3">
-
+	<navigation-rule>
+		<display-name>Index.xhtml</display-name>
+		<from-view-id>/Index.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>Ver información</from-outcome>
+			<to-view-id>/Contacto.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>Contacto.xhtml</display-name>
+		<from-view-id>/Contacto.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>Navegar</from-outcome>
+			<to-view-id>/Index.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>Contacto.xhtml</display-name>
+		<from-view-id>/Contacto.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>Iniciar</from-outcome>
+			<to-view-id>/IniciarSesion.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<display-name>IniciarSesion.xhtml</display-name>
+		<from-view-id>/IniciarSesion.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>Regresar a inicio</from-outcome>
+			<to-view-id>/Index.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
 </faces-config>
