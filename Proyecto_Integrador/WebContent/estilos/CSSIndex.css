@@ -1,80 +1,78 @@
 @charset "ISO-8859-1";
 
-.fondo {
+body {
 	margin: 0;
 	padding: 0;
 	background: url(../imagenes/google.jpg) no-repeat center top;
-
+	background-size: cover;
 	font-family: sans-serif;
 	height: 100vh;
-	
-	
 }
 
-.header{
-	background:#cff5f8;
-	color:black;
-	
+.fondo {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	height: 100vh;
 }
- .header a{
- color: black;
- text-decoration:none;
- 
- }
 
-.logo-nav-conteiner{
-	display:flex;
+.header {
+	background: #cff5f8;
+	color: black;
+}
+
+.header a {
+	color: black;
+	text-decoration: none;
+}
+
+.logo-nav-conteiner {
+	display: flex;
 	justify-content: space-between;
-	aligin-items:center;
+	aligin-items: center;
 }
 
-.logo{
-	letter-spacing:3.3px;
-	font-size:1.8em;
+.logo {
+	letter-spacing: 3.3px;
+	font-size: 1.8em;
 }
 
-
-.logo-container{
-	display:flex;
+.logo-container {
+	display: flex;
 	justify-content: space-between
 }
 
-.navegacion ul{
-	margin:0;
-	padding:0;
-	list-style:none;
-}
- .navegacion ul li{
-  display: inline-block
- }
- 
-    .navegacion ul li a{
-      display: block;
-      padding:0.5rem 1rem;
-      transition: all 0.3s linear;
-      font-size:1.3rem;
-      
-    }
-      
-      .navegacion ul li a:hover{
-      background: #ccc;
-      }
-
-
-.cuadro{
-	widht:40px;
-	height:150px;
-	position:relative;
-	top: 150px;
-	left:25px;
-	
-	
-}
-
-
-
-.pie{
+.navegacion ul {
 	margin: 0;
 	padding: 0;
-	top:50%;
+	list-style: none;
+}
+
+.navegacion ul li {
+	display: inline-block
+}
+
+.navegacion ul li a {
+	display: block;
+	padding: 0.5rem 1rem;
+	transition: all 0.3s linear;
+	font-size: 1.3rem;
+}
+
+.navegacion ul li a:hover {
+	background: #ccc;
+}
+
+.cuadro {
+	widht: 40px;
+	height: 150px;
+	position: relative;
+	top: 150px;
+	left: 25px;
+}
+
+.pie {
+	margin: 0;
+	padding: 0;
+	top: 50%;
 }
