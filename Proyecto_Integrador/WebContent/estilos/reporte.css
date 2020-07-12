@@ -1,0 +1,68 @@
+@charset "ISO-8859-1";
+
+body {
+	margin: 0;
+	padding: 0;
+	background: url(../imagenes/fondo2.jpg) no-repeat center top;
+	font-family: sans-serif;
+	height: 100vh;
+}
+
+.header{
+	background:#ffffff;
+	color:black;
+	
+}
+ .header a{
+ color: black;
+ text-decoration:none;
+ 
+ }
+
+.logo-nav-conteiner{
+	display:flex;
+	justify-content: space-between;
+	aligin-items:center;
+}
+
+.logo{
+	letter-spacing:3.3px;
+	font-size:1.8em;
+}
+
+
+.logo-container{
+	display:flex;
+	justify-content: space-between
+}
+
+.navegacion ul{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+ .navegacion ul li{
+  display: inline-block
+ }
+ 
+    .navegacion ul li a{
+      display: block;
+      padding:0.5rem 1rem;
+      transition: all 0.3s linear;
+      font-size:1.3rem;
+      
+    }
+      
+      .navegacion ul li a:hover{
+      background: #ccc;
+      }
+      
+.cuadro input[type="submit"] {
+	border: none;
+	outline: none;
+	height: 30px;
+	background: #ff80c0;
+	color: #fff;
+	font-size: 18px;
+	border-radius: 20px;
+}
