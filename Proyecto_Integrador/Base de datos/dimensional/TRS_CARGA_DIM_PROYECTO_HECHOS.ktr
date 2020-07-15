@@ -428,7 +428,7 @@
     <created_user>-</created_user>
     <created_date>2020/07/02 23:23:22.951</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2020/07/03 01:44:24.845</modified_date>
+    <modified_date>2020/07/15 12:35:51.844</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -440,6 +440,57 @@
     <type>POSTGRESQL</type>
     <access>Native</access>
     <database>Global_Mobility_Report_Dimensional</database>
+    <port>5433</port>
+    <username>postgres</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb79ce10bec3fd89</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>5433</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
+  <connection>
+    <name>stg</name>
+    <server>localhost</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>Stage_Global_Mobility_Report</database>
     <port>5433</port>
     <username>postgres</username>
     <password>Encrypted 2be98afc86aa7f2e4cb79ce10bec3fd89</password>
@@ -542,9 +593,17 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>carga</connection>
-    <sql>SELECT sk_porcentaje_cambio,sk_pais,sk_subregion,sk_fecha FROM dim_subregion,
-dim_fecha,dim_pais,dim_porcentaje_cambio</sql>
+    <connection>stg</connection>
+    <sql>SELECT
+porc.id_porcentaje as sk_porcentaje_cambio,
+pais.id_pais as sk_pais,
+sub.id_subregion as sk_subregion,
+fec.id_fecha as sk_fecha
+FROM dim_subregion as sub,dim_fecha as fec,dim_pais as pais,
+dim_porcentaje_cambio as porc
+where sub.id_subregion = pais.id_subregion
+and fec.id_fecha = pais.id_fecha
+and porc.id_porcentaje = pais.id_porcentaje;</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -581,8 +640,32 @@ dim_fecha,dim_pais,dim_porcentaje_cambio</sql>
       <schema/>
       <table>dim_hechos</table>
       <key>
+        <name>sk_hechos</name>
+        <field>sk_hechos</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
         <name>sk_porcentaje_cambio</name>
         <field>sk_porcentaje_cambio</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>sk_pais</name>
+        <field>sk_pais</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>sk_subregion</name>
+        <field>sk_subregion</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <key>
+        <name>sk_fecha</name>
+        <field>sk_fecha</field>
         <condition>=</condition>
         <name2/>
       </key>
