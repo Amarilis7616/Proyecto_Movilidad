@@ -1,9 +1,9 @@
 @charset "ISO-8859-1";
 
-.fondo {
+body {
 	margin: 0;
 	padding: 0;
-	background: url(../imagenes/fondo3.jpg) no-repeat center top;
+	background: url(../imagenes/fondo7.jpg) no-repeat center top;
 	background-size: cover;
 	font-family: sans-serif;
 	height: 100vh;
@@ -56,3 +56,12 @@
       .navegacion ul li a:hover{
       background: #ccc;
       }
+      
+.logo5{
+	
+	margin: 0;
+	padding: 0;
+	
+	
+	
+}
