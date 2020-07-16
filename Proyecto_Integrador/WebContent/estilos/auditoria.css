@@ -60,12 +60,14 @@ body {
       
       
 table {
-   width: 70%;
+   width: 50%;
    border: 1px solid #000;
 }
 th, td {
-   width: 25%;
+   width: 15%;
    vertical-align: top;
    border: 1px solid #000;
    
 }
+
+
