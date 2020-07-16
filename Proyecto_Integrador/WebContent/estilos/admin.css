@@ -58,10 +58,13 @@ body {
       }
       
 .logo5{
-	
 	margin: 0;
 	padding: 0;
-	
-	
+	top:100%;
+
+}
+
+.fondo h2{
+	font-size: 40px; 
 	
 }

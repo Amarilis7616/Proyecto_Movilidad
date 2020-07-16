@@ -1,0 +1,85 @@
+@charset "ISO-8859-1";
+.fondo {
+	margin: 0;
+	padding: 0;
+	background: url(../imagenes/login.jpg) no-repeat center top;
+	font-family: sans-serif;
+	height: 100vh;
+}
+
+.cuadro {
+	width: 320px;
+	height: 490px;
+	background: #a4c6f4;
+	color: #000000;
+	top: 50%;
+	left: 50%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	box-sizing: border-box;
+	padding: 70px 30px;
+	border-radius: 3%;
+}
+
+.cuadro .logo {
+	width: 120px;
+	height: 100px;
+	border-radius: 50%;
+	position: absolute;
+	top: -50px;
+	left: calc(50% - 50px);
+}
+
+
+.cuadro h2 {
+	margin: 0;
+	padding: 0 0 20px;
+	text-align: center;
+	font-size: 22px;
+}
+
+.cuadro label {
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	display: block;
+}
+
+.cuadro input[type="text"], .cuadro input[type="password"] {
+	border: 5px;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: 5px;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+}
+
+.cuadro input[type="submit"] {
+	padding:5px;
+	border: 5px;
+	outline: 5px;
+	height: 40px;
+	background: #ff80c0;
+	color: #fff;
+	font-size: 18px;
+	border-radius: 20px;
+}
+
+.cuadro input[type="submit"]:hover {
+	
+	cursor: pointer;
+	background: #669bf4;
+	color: #000;
+}
+
+.cuadro a {
+	text-decoration: none;
+	font-size: 12px;
+	line-height: 20px;
+	color: #000000;
+}
+
+.cuadro a:hover {
+	color: #ff80c0;
+}
