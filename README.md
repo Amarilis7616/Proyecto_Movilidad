@@ -30,7 +30,7 @@ Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones
 * **Aamarilis Cueva** - *Trabajo Inicial* - (https://github.com/Amarilis7616)
 * **Tatiana Sarango** - *Documentación* - (https://github.com/tsarango)
 * **Sebastián Espinel** - *Base de datos* - (https://github.com/JEspinel)
-También puede mirar la lista (https://github.com/Amarilis7616/Proyecto_Movilidad.git) quíenes han participado en este proyecto. 
+* También puede mirar la lista (https://github.com/Amarilis7616/Proyecto_Movilidad.git) quíenes han participado en este proyecto. 
 ## Licencia 📄
 
 Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md](LICENSE.md) para detalles
