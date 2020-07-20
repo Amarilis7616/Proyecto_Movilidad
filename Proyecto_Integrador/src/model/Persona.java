@@ -1,61 +1,75 @@
 package model;
 
 public class Persona {
-	
-	private int id_usuario;
+	private int id_persona;
 	private String nombre;
-	private String apellido;
-	private String direccion;
-	private String correo;
-	private int id_perfil;
-	
-	public Persona() {
-		
+    private String apellido;
+    private String doc_identidad;
+    private String correo_electronico;
+    private int id_tipo;
+    
+    public Persona() {
+    	
+    }
+    
+    public Persona(int id_persona,String nombre, String apellido, String doc_identidad, String correo, int id_tipo) {
+    	this.id_persona = id_persona;
+    	this.nombre= nombre;
+    	this.apellido = apellido;
+    	this.doc_identidad= doc_identidad;
+    	this.correo_electronico = correo;
+    	this.id_tipo = id_tipo;
+    }
+
+    
+	public int getId_persona() {
+		return id_persona;
 	}
-	
-	public Persona(int id_usuario,String nombre, String apellido, String correo, int id_perfil) {
-		this.id_usuario=id_usuario;
-		this.nombre=nombre;
-		this.apellido=apellido;
-		this.correo=correo;
-		this.id_perfil=id_perfil;
+
+	public void setId_persona(int id_persona) {
+		this.id_persona = id_persona;
 	}
-	
-	
-	public int getId_usuario() {
-		return id_usuario;
-	}
-	public void setId_usuario(int id_usuario) {
-		this.id_usuario = id_usuario;
-	}
+
 	public String getNombre() {
 		return nombre;
 	}
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public String getDireccion() {
-		return direccion;
+
+	public String getApellido() {
+		return apellido;
 	}
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
 	}
-	public String getCorreo() {
-		return correo;
+
+	public String getDoc_identidad() {
+		return doc_identidad;
 	}
-	public void setCorreo(String correo) {
-		this.correo = correo;
+
+	public void setDoc_identidad(String doc_identidad) {
+		this.doc_identidad = doc_identidad;
 	}
-	
-	
-	public int getId_perfil() {
-		return id_perfil;
+
+	public String getCorreo_electronico() {
+		return correo_electronico;
 	}
-	public void setId_perfil(int id_perfil) {
-		this.id_perfil = id_perfil;
+
+	public void setCorreo_electronico(String correo_electronico) {
+		this.correo_electronico = correo_electronico;
 	}
-	
-	
-	
+
+	public int getId_tipo() {
+		return id_tipo;
+	}
+
+	public void setId_tipo(int id_tipo) {
+		this.id_tipo = id_tipo;
+	}
+    
+    
 
 }

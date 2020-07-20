@@ -4,13 +4,13 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html">
 
-<head>
+<h:head>
 <title>Listado Usuarios</title>
 <meta charset="UTF-8" />
 
 <link rel="stylesheet" href="../estilos/usuario.css" />
-</head>
-<body>
+</h:head>
+<h:body>
 	<div class="fondo">
 		<header class="header">
 		<div class="container  logo-nav-conteiner">
@@ -27,47 +27,49 @@
 		</div>
 		</header>
 	</div>
+	
+	
 	<center>
 	
 	<h1>USUARIOS REGISTRADOS</h1>
 	
-		<br /><table>
-
-			<tr>
-
-				<th>Nombre</th>
-
-				<th>Apellido</th>
-
-				<th>Correo</th>
-
-				<th>Clave</th>
-				
-				<th>       </th>
-				
-				<th>       </th>
-
-
-			</tr>
-			<tr>
-
-				<td>Amarilis </td>
-
-				<td>Cueva</td>
-
-				<td> rcuevac1@est.ups.edu.ec</td>
-				<td> ********* </td>
-				<td><a href="cambiarClave.xhtml">Cambiar Clave</a></td>
-				<td> <a href="#">Bloquear</a></td>
-
-			</tr>
-
-
-
-		</table>
+		<br />
+		<h:dataTable id="personas"
+				value="#{beanRegistroPersona.listaPersona()}" var="listarUsuarios"
+				border="1">
+				<h:column>
+					<f:facet name="header">Nombre Usuario</f:facet>    				
+                                #{listarUsuarios.nombre}
+                        </h:column>
+				<h:column>
+					<f:facet name="header">Apellido Usuario</f:facet>    				
+                                #{listarUsuarios.apellido}
+                        </h:column>
+				<h:column>
+					<f:facet name="header">Cedula</f:facet>    				
+                                #{listarUsuarios.doc_identidad}
+                        </h:column>
+				<h:column>
+					<f:facet name="header">Correo Electrónico</f:facet>    				
+                                #{listarUsuarios.correo_electronico}
+                        </h:column>
+				<h:column>
+					<f:facet name="header">Tipo</f:facet>    				
+                                #{listarUsuarios.id_tipo}
+                        </h:column>
+				<h:column>
+					<f:facet name="header">Editar</f:facet>
+					
+					<h:link value="Editar" outcome="editar_user" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">Eliminar</f:facet>
+					<h:commandButton
+						action="#{beanIngresoEstudiante.EliminarDatosEstudiante(listarAlumnos)}"
+						value="Eliminar" />
+				</h:column>
+			</h:dataTable>
 	</center>
 
-
-
-</body>
+</h:body>
 </html>
