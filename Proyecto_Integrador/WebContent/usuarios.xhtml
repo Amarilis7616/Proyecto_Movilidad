@@ -46,27 +46,25 @@
                                 #{listarUsuarios.apellido}
                         </h:column>
 				<h:column>
-					<f:facet name="header">Cedula</f:facet>    				
-                                #{listarUsuarios.doc_identidad}
-                        </h:column>
-				<h:column>
-					<f:facet name="header">Correo Electrónico</f:facet>    				
+					<f:facet name="header">Correo</f:facet>    				
                                 #{listarUsuarios.correo_electronico}
                         </h:column>
 				<h:column>
-					<f:facet name="header">Tipo</f:facet>    				
-                                #{listarUsuarios.id_tipo}
+					<f:facet name="header">Clave</f:facet>    				
+                                #{listarUsuarios.clave}
                         </h:column>
 				<h:column>
-					<f:facet name="header">Editar</f:facet>
+					<f:facet name="header">Tipo</f:facet>    				
+                                #{listarUsuarios.id_perfil}
+                        </h:column>
+				<h:column>
+					<f:facet name="header">Cambiar Clave</f:facet>
 					
-					<h:link value="Editar" outcome="editar_user" />
+					<h:link value="Cambiar Clave" outcome="cambiarClave" />
 				</h:column>
 				<h:column>
-					<f:facet name="header">Eliminar</f:facet>
-					<h:commandButton
-						action="#{beanIngresoEstudiante.EliminarDatosEstudiante(listarAlumnos)}"
-						value="Eliminar" />
+					<f:facet name="header">BLOQUEAR</f:facet>
+					<h:link  value="Bloquear" outcome="Bloquear" />
 				</h:column>
 			</h:dataTable>
 	</center>

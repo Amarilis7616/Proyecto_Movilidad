@@ -1,33 +1,32 @@
 package model;
 
 public class Persona {
-	private int id_persona;
+	private int id_usuario;
 	private String nombre;
     private String apellido;
-    private String doc_identidad;
     private String correo_electronico;
-    private int id_tipo;
+    private String Clave;
+    private int id_perfil;
     
     public Persona() {
     	
     }
     
-    public Persona(int id_persona,String nombre, String apellido, String doc_identidad, String correo, int id_tipo) {
-    	this.id_persona = id_persona;
+    public Persona(int id_usuario,String nombre, String apellido, String correo, String clave, int id_perfil) {
+    	this.id_usuario = id_usuario;
     	this.nombre= nombre;
     	this.apellido = apellido;
-    	this.doc_identidad= doc_identidad;
     	this.correo_electronico = correo;
-    	this.id_tipo = id_tipo;
+    	this.Clave = clave;
+    	this.id_perfil = id_perfil;
     }
 
-    
-	public int getId_persona() {
-		return id_persona;
+	public int getId_usuario() {
+		return id_usuario;
 	}
 
-	public void setId_persona(int id_persona) {
-		this.id_persona = id_persona;
+	public void setId_usuario(int id_usuario) {
+		this.id_usuario = id_usuario;
 	}
 
 	public String getNombre() {
@@ -46,14 +45,6 @@ public class Persona {
 		this.apellido = apellido;
 	}
 
-	public String getDoc_identidad() {
-		return doc_identidad;
-	}
-
-	public void setDoc_identidad(String doc_identidad) {
-		this.doc_identidad = doc_identidad;
-	}
-
 	public String getCorreo_electronico() {
 		return correo_electronico;
 	}
@@ -62,13 +53,24 @@ public class Persona {
 		this.correo_electronico = correo_electronico;
 	}
 
-	public int getId_tipo() {
-		return id_tipo;
+	public String getClave() {
+		return Clave;
 	}
 
-	public void setId_tipo(int id_tipo) {
-		this.id_tipo = id_tipo;
+	public void setClave(String clave) {
+		this.Clave = clave;
 	}
+
+	public int getId_perfil() {
+		return id_perfil;
+	}
+
+	public void setId_perfil(int id_perfil) {
+		this.id_perfil = id_perfil;
+	}
+
+    
+	
     
     
 
