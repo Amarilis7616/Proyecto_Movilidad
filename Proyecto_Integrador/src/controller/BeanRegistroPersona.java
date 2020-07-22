@@ -95,5 +95,9 @@ public class BeanRegistroPersona implements Serializable {
 		ControllerPersona controller = new ControllerPersona();
 		return controller.ImprimirPersona();
 	}
+	
+	public String Menu(){
+	    return "PaginaAdmin";
+	    } 
 
 }

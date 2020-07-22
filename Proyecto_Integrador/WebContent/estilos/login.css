@@ -10,7 +10,7 @@
 
 .cuadro {
 	width: 320px;
-	height: 380px;
+	height: 330px;
 	background: #a4c6f4;
 	color: #000000;
 	top: 50%;
@@ -62,7 +62,7 @@
 	height: 30px;
 	background: #ff80c0;
 	color: #fff;
-	font-size: 18px;
+	font-size: 25px;
 	border-radius: 20px;
 }
 

@@ -11,7 +11,7 @@
 </head>
 
 <body>
-
+    <form action="PaginaAdmin.xhtml" method="post">
 	<div class="fondo">
 		<div class="cuadro">
 			<img src="../imagenes/logo1.gif" class="logo"></img>
@@ -19,9 +19,11 @@
 			<label for="username">Correo</label> <input type="text"
 				name="usuario" placeholder="Ingrese el Usuario" /> <label
 				for="password">Clave</label><input type="password" name="clave"
-				placeholder="Ingrese la Contraseña" /> <input type="submit"
-				value="Iniciar" /> <a href="Index.xhtml">Página Principal</a>
+				placeholder="Ingrese la Contraseña" />
+				 <br /><br /><h:commandButton value="Iniciar" action="#{beanRegistroPersona.Menu()}"/>
+				 <a href="Index.xhtml">Página Principal</a>
 		</div>
 	</div>
+	</form>
 </body>
 </html>
