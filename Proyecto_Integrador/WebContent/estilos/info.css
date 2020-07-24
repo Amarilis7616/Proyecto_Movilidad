@@ -18,6 +18,13 @@ body {
  text-decoration:none;
  
  }
+ .cuadro {
+	widht: 40px;
+	height: 150px;
+	position: relative;
+	top: 150px;
+	left: 25px;
+}
 
 .logo-nav-conteiner{
 	display:flex;
@@ -65,5 +72,10 @@ body {
 	color: #fff;
 	font-size: 18px;
 	border-radius: 20px;
+}
+.pie {
+	margin: 0;
+	padding: 0;
+	top: 50%;
 }
 
