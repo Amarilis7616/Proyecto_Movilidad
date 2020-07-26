@@ -1,11 +1,24 @@
 package model;
 
-public class Persona {
+import javax.enterprise.context.SessionScoped;
+import javax.inject.Named;
+import model.Persona;
+import java.io.Serializable;
+
+
+@Named(value="persona")
+@SessionScoped
+
+public class Persona implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private int id_usuario;
 	private String nombre;
     private String apellido;
-    private String correo_electronico;
-    private String Clave;
+    private String correo;
+    private String clave;
     private int id_perfil;
     
     public Persona() {
@@ -16,11 +29,11 @@ public class Persona {
     	this.id_usuario = id_usuario;
     	this.nombre= nombre;
     	this.apellido = apellido;
-    	this.correo_electronico = correo;
-    	this.Clave = clave;
+    	this.correo = correo;
+    	this.clave=clave;
     	this.id_perfil = id_perfil;
     }
-
+    
 	public int getId_usuario() {
 		return id_usuario;
 	}
@@ -45,20 +58,20 @@ public class Persona {
 		this.apellido = apellido;
 	}
 
-	public String getCorreo_electronico() {
-		return correo_electronico;
+	public String getCorreo() {
+		return correo;
 	}
 
-	public void setCorreo_electronico(String correo_electronico) {
-		this.correo_electronico = correo_electronico;
+	public void setCorreo(String correo) {
+		this.correo = correo;
 	}
-
+	
 	public String getClave() {
-		return Clave;
+		return clave;
 	}
 
 	public void setClave(String clave) {
-		this.Clave = clave;
+		this.clave = clave;
 	}
 
 	public int getId_perfil() {
@@ -68,10 +81,4 @@ public class Persona {
 	public void setId_perfil(int id_perfil) {
 		this.id_perfil = id_perfil;
 	}
-
-    
-	
-    
-    
-
 }

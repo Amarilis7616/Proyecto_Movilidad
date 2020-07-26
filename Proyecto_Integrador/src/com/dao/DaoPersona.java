@@ -14,85 +14,157 @@ import model.Persona;
 
 public class DaoPersona {
 	
-	 public ArrayList<Persona> FindAllPersonas() throws SQLException {
-	        ArrayList<Persona> persona = new ArrayList<>();
+	public ArrayList<Persona> FindAllPersonas() throws SQLException {
+		ArrayList<Persona> persona = new ArrayList<>();
 
-	        ResultSet re;
-	        Cls_conexion cl = new Cls_conexion();
-	        re = cl.consulta("select * from usuarios;");
-	        int id_usuario;
-	        String nombre;
-	        String apellido;
-	        String correo_electronico;
-	        String Clave;
-	        int id_perfil;
-	        while (re.next()) {
-	        	id_usuario = re.getInt(1);
-	            nombre = re.getString(2);
-	            apellido = re.getString(3);
-	            correo_electronico= re.getString(4);
-	            Clave = re.getString(5);
-	            id_perfil = re.getInt(6);
-	            persona.add(new Persona(id_usuario,nombre,apellido,correo_electronico,Clave,id_perfil));
-	        }
-	        return persona;
-	    }
-	 
-	 public ArrayList<Persona> envioPersona(int id_usuario,String nombre, String apellido,String correo,String Clave, int id_perfil) 
-			 throws SQLException {
-		 	Persona persona = new Persona(id_usuario,nombre,apellido,correo,Clave,id_perfil);
-	        persona.setId_usuario(id_usuario);
-		 	persona.setNombre(nombre);
-	        persona.setApellido(apellido);
-	        persona.setCorreo_electronico(correo);
-	        persona.setClave(Clave);
-	        persona.setId_perfil(id_perfil);
+		ResultSet re;
+		Cls_conexion cl = new Cls_conexion();
+		re = cl.consulta("select * from usuarios");
+		int id_usuario;
+		String nombre;
+		String apellido;
+		String correo;
+		String clave;
+		int id_perfil;
+		while (re.next()) {
+			id_usuario = re.getInt(1);
+			nombre = re.getString(2);
+			apellido = re.getString(3);
+			correo = re.getString(4);
+			clave = re.getString(5);
+			id_perfil = re.getInt(6);
+			persona.add(new Persona(id_usuario, nombre, apellido, correo, clave, id_perfil));
+		}
+		return persona;
+	}
 
-	        Cls_conexion cl = new Cls_conexion();
-	        cl.ejecutar("insert into usuarios (nombre, apellido,correo, clave, id_perfil) values('" + nombre + "','" + apellido + "','" 
-	        + correo + "','" + Clave + "'," + 2 +" );");
+	public ArrayList<Persona> envioPersona(int id_usuario, String nombre, String apellido,
+			String correo, String clave, int id_perfil) throws SQLException {
+		Persona persona = new Persona(id_usuario, nombre, apellido, correo, clave, 2);
+		persona.setId_usuario(id_usuario);
+		persona.setNombre(nombre);
+		persona.setApellido(apellido);
+		persona.setCorreo(correo);
+		persona.setClave(clave);
+		persona.setId_perfil(id_perfil);
 
-	        return this.FindAllPersonas();
-				
-			
-	    }
-	 
-	 public String Registrar(int id_persona, String nombre, String apellido, String correo,String clave,
-				 int id_perfil) {
-			String result = "";
-			Cls_conexion cl = new Cls_conexion();
-			PreparedStatement usuario = null;
-			String sql = "INSERT INTO usuarios(nombre, apellido, correo, clave, id_perfil)";
-			sql += "VALUES(?,?,?,?,?)";
+		Cls_conexion cl = new Cls_conexion();
+		cl.ejecutar(
+				"insert into usuarios (nombre, apellido, correo, clave, id_perfil) values ('"
+						+ nombre + "','" + apellido + "','" + correo + "','" + clave + "','" + 2
+						+ "');");
+		return this.FindAllPersonas();
+
+	}
+
+	public String RegistrarUsuario(int id_usuario, String nombre, String apellido, String correo,
+			String clave, int id_perfil) {
+		String result = "";
+		Cls_conexion cl = new Cls_conexion();
+		PreparedStatement pr = null;
+		String sql = "INSERT INTO usuarios(nombre, apellido, correo, clave, id_perfil)";
+		sql += "VALUES(?,?,?,?,?)";
+		try {
+			pr = cl.getConexion().prepareStatement(sql);
+			pr.setString(1, nombre);
+			pr.setString(2, apellido);
+			pr.setString(3, correo);
+			pr.setString(4, clave);
+			pr.setInt(5, 2);
+
+			if (pr.executeUpdate() == 1) {
+				result = "RegCor";
+			} else {
+				result = "no";
+			}
+		} catch (Exception ex) {
+			result = ex.getMessage();
+		} finally {
 			try {
-			    usuario = cl.getConexion().prepareStatement(sql);
-				usuario.setString(1, nombre);
-				usuario.setString(2, apellido);
-				usuario.setString(3, correo);
-				usuario.setString(4, clave);
-				usuario.setInt(5, 2);
-
-				if (usuario.executeUpdate() == 1) {
-					result = "RegistroCorrecto";
-				} else {
-					result = "error";
-				}
+				pr.close();
+				cl.getConexion().close();
 			} catch (Exception ex) {
 				result = ex.getMessage();
-			} finally {
-				try {
-					usuario.close();
-					cl.getConexion().close();
-				} catch (Exception ex) {
-					result = ex.getMessage();
-				}
 			}
-
-			return result;
 		}
 
-	 
- 
- }
+		return result;
+	}
+/*
+	public String eliminarPer(Persona persona) {
+		String result = "";
+		PreparedStatement st = null;
+		Cls_conexion cl = new Cls_conexion();
+		try {
+			st = cl.getConexion().prepareStatement("delete from persona where cedula = ? ");
+			st.setString(1, persona.getDoc_identidad());
+			if (st.executeUpdate() == 1) {
+				result = "eliminado";
+			} else {
+				result = "noelim";
+			}
+		} catch (Exception ex) {
 
+			result = ex.getMessage();
+		} finally {
+			try {
+				st.close();
+				cl.getConexion().close();
+			} catch (Exception ex) {
+				result = ex.getMessage();
+			}
+		}
+		return result;
 
+	}
+	
+    public void modificarPer(Persona persona) throws SQLException {
+
+        Cls_conexion cl = new Cls_conexion();
+        PreparedStatement st = cl.getConexion().prepareStatement("UPDATE persona SET clave = ? where cedula = ? ");
+        st.setString(1, persona.getClave());
+        st.setString(2, persona.getDoc_identidad());
+        st.executeUpdate();
+
+    }
+    
+    
+    public Persona LeerID(Persona persona) throws Exception {
+
+        Persona per = new Persona();
+        ResultSet re;
+        Cls_conexion cl = new Cls_conexion();
+        re = cl.consulta("select * from persona where cedula = '" + persona.getDoc_identidad() + "'");
+
+        while (re.next()) {
+
+            per.setDoc_identidad(re.getString("doc_identidad"));
+            per.setClave(re.getString("clave"));
+            per.setCorreo_electronico(re.getString("correo_electronico"));
+        }
+        return per;
+    }
+    */
+    
+ /*   public ArrayList<Persona> FindAllCedulas() throws SQLException {
+		ArrayList<Persona> persona = new ArrayList<>();
+
+		ResultSet re;
+		Cls_conexion cl = new Cls_conexion();
+		re = cl.consulta("select cedula,clave from persona");
+		
+		String doc_identidad;
+		
+		
+		while (re.next()) {
+			
+			doc_identidad = re.getString(1);
+			
+			
+			persona.add(new Persona(doc_identidad));
+		}
+		return persona;
+	} */
+    
+
+}

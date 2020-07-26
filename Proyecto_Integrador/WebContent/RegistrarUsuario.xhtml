@@ -2,7 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
 
 <head>
 <title>Registro</title>
@@ -16,25 +18,29 @@
 		<div class="cuadro">
 			<img src="../imagenes/logo1.gif" class="logo"></img>
 			<h2>Registrar Miembros</h2>
-			<label for="nombres">Nombre:</label> 
-			<input type="text" name="nombre"
-			    value="#{beanRegistroPersona.nombre}" required="true"
-				placeholder="Ingrese el Nombre" 
-				 title="Ingrese Solo letras"
-				requiredMessage="El campo es obligatorio" />
-		    <label for="apellidos">Apellido:</label>
-			<input type="text" name="apellido" value="#{beanRegistroPersona.apellido}" 
-			    placeholder="Ingrese Apellido" required="true"
-				title="Ingrese Solo letras"
-				requiredMessage="El campo es obligatorio" /> 
-		    <label for="username">Correo</label>
-			<input type="text" name="usuario" value ="#{beanRegistroPersona.correo_electronico}" placeholder="Ingrese el Usuario"
-				pattern=".+[@].+[.].+" requiredMessage="El campo el obligatorio" />
+			<label for="name">Nombre</label>
+			<h:inputText type="text" id="nombre" 
+				value="#{beanRegistroPersona.nombre}"
+				pt:placeholder="Ingrese el Nombre" required="true" ></h:inputText>
+				<h:message for="nombre" style="color:red; font-family:Comic-Sans" />
+			<label for="lastname">Apellido</label>
+			<h:inputText id="apellido" value="#{beanRegistroPersona.apellido}"
+				pt:placeholder="Ingrese el Apellido" required="true"></h:inputText>
+				<h:message for="apellido" style="color:red; font-family:Comic-Sans" />
+				<label for="username">Correo</label>
+			<h:inputText id="correo"  
+				value="#{beanRegistroPersona.correo}"
+				pt:placeholder="Ingrese el Correo" required="true">
+				<f:validateRegex pattern=".+[@].+[.].+" />
+				</h:inputText>
+				<h:message for="correo" style="color:red; font-family:Comic-Sans" />
 			<label for="password">Clave</label>
-			<input type="password"
-				name="clave" value="#{beanRegistroPersona.clave}" required="true" placeholder="Ingrese la Contraseña" minlenght="6" maxlenght="6"
-				equiredMessage="El campo es obligatorio" /> <br />
-			<br /> <h:commandButton type="submit" value="Registrar" action="#{beanRegistroPersona.guardarPersona()}" >
+			<h:inputSecret id="clave" value="#{beanRegistroPersona.clave}" 
+				pt:placeholder="Ingrese Clave" required="true"></h:inputSecret>
+				<h:message for="clave" style="color:red; font-family:Comic-Sans" />
+			 <br />
+			<br /> <h:commandButton value="Guardar"
+				action="#{beanRegistroPersona.almacenarPersona()}">
 			</h:commandButton>
 			
 			<a href="PaginaAdmin.xhtml">Página Principal</a>
