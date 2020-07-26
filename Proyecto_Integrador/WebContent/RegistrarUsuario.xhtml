@@ -11,25 +11,35 @@
 </head>
 
 <body>
+<h:form>
 	<div class="fondo">
 		<div class="cuadro">
 			<img src="../imagenes/logo1.gif" class="logo"></img>
 			<h2>Registrar Miembros</h2>
-			<label for="nombres">Nombre:</label> <input type="text" name="nombre"
-				placeholder="Ingrese el Nombre" minlenght="5" maxlength="40"
-				pattern="[A-Za]" title="Solo letras"
-				requiredMessage="El campo es obligatorio" /> <label for="apellidos">Apellido:</label>
-			<input type="text" name="apellido" placeholder="Ingrese Apellido"
-				minlenght="5" maxlength="40" pattern="[A-Za]" title="Solo letras"
-				requiredMessage="El campo es obligatorio" /> <label for="username">Correo</label>
-			<input type="text" name="usuario" placeholder="Ingrese el Usuario"
-				pattern="[A-Za-z0-9]{5,40}" equiredMessage="El campo es obligatorio" />
-			<label for="password">Clave</label><input type="password"
-				name="clave" placeholder="Ingrese la Contraseña" minlenght="6"
+			<label for="nombres">Nombre:</label> 
+			<input type="text" name="nombre"
+			    value="#{beanRegistroPersona.nombre}" required="true"
+				placeholder="Ingrese el Nombre" 
+				 title="Ingrese Solo letras"
+				requiredMessage="El campo es obligatorio" />
+		    <label for="apellidos">Apellido:</label>
+			<input type="text" name="apellido" value="#{beanRegistroPersona.apellido}" 
+			    placeholder="Ingrese Apellido" required="true"
+				title="Ingrese Solo letras"
+				requiredMessage="El campo es obligatorio" /> 
+		    <label for="username">Correo</label>
+			<input type="text" name="usuario" value ="#{beanRegistroPersona.correo_electronico}" placeholder="Ingrese el Usuario"
+				pattern=".+[@].+[.].+" requiredMessage="El campo el obligatorio" />
+			<label for="password">Clave</label>
+			<input type="password"
+				name="clave" value="#{beanRegistroPersona.clave}" required="true" placeholder="Ingrese la Contraseña" minlenght="6" maxlenght="6"
 				equiredMessage="El campo es obligatorio" /> <br />
-			<br /> <input type="submit" value="Registrar" /> <a
-				href="PaginaAdmin.xhtml">Página Principal</a>
+			<br /> <h:commandButton type="submit" value="Registrar" action="#{beanRegistroPersona.guardarPersona()}" >
+			</h:commandButton>
+			
+			<a href="PaginaAdmin.xhtml">Página Principal</a>
 		</div>
 	</div>
+</h:form>
 </body>
 </html>
