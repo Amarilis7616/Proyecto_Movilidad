@@ -28,8 +28,7 @@
 				pt:placeholder="Ingrese el Apellido" required="true"></h:inputText>
 				<h:message for="apellido" style="color:red; font-family:Comic-Sans" />
 				<label for="username">Correo</label>
-			<h:inputText id="correo"  
-				value="#{beanRegistroPersona.correo}"
+			<h:inputText id="correo"  value="#{beanRegistroPersona.correo}"
 				pt:placeholder="Ingrese el Correo" required="true">
 				<f:validateRegex pattern=".+[@].+[.].+" />
 				</h:inputText>
