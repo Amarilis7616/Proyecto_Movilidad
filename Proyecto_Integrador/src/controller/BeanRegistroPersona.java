@@ -88,7 +88,7 @@ public class BeanRegistroPersona implements Serializable {
 		int perfil = 2;
 		ControllerPersona controller = new ControllerPersona();
 
-		String respuesta = controller.enviaDatoEstudiante(id_usuario, nombre, apellido,
+		String respuesta = controller.DatosEstudiante(id_usuario, nombre, apellido,
 				correo, clave, perfil);
 
 		return respuesta;
@@ -103,16 +103,16 @@ public class BeanRegistroPersona implements Serializable {
 		return respuesta;
 	}
 
-	public String addPersona() {
+	public String addUsuario() {
 		int perfil = 2;
-		String r2 = "";
+		String pro = "";
 		ControllerPersona controller = new ControllerPersona();
 		String respuesta = controller.agregarPersona(id_usuario, nombre, apellido, correo,
 				clave, perfil);
 		clear();
 		if (respuesta == "RegCor")
-			r2 = "AddCor";
-		return r2;
+			pro = "AddCor";
+		return pro;
 	}
 
 	public void clear() {
@@ -121,7 +121,7 @@ public class BeanRegistroPersona implements Serializable {
 		setCorreo(null);
 		setClave(null);
 
-	}// end clear`
+	}
 	
 	public void clearLogin() {
 		
@@ -136,12 +136,6 @@ public class BeanRegistroPersona implements Serializable {
 		ControllerPersona controller = new ControllerPersona();
 		return controller.ImprimePersona();
 	}
-	
-	/*public ArrayList<Persona> listaCedula() throws SQLException {
-		ControllerPersona controller = new ControllerPersona();
-		return controller.ImprimeCedula();
-	}
-	*/
 	
 
 	public String irEdicion() {
@@ -187,7 +181,7 @@ public class BeanRegistroPersona implements Serializable {
         return "editar_user";
     }
 	*/
-	public String ingresoAlSistema() throws SQLException {
+	public String iniciarSesion() throws SQLException {
 		ControllerPersona controller = new ControllerPersona();
 
         int valor = controller.login(correo, clave);
@@ -196,13 +190,13 @@ public class BeanRegistroPersona implements Serializable {
         	        	
             if (valor == 1) {
             	clearLogin();
-                return "" + valor;           
+                return "PaginaAdmin.xhtml";           
 
             }
 
             if (valor == 2) {
             	clearLogin();
-                return "" + valor;
+                return "PaginaRegistrado.xhtml";
             }
 
             

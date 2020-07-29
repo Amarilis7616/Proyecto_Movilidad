@@ -3,6 +3,7 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
 		xmlns:p="http://primefaces.org/ui">
 
 <head>
@@ -12,19 +13,27 @@
 </head>
 
 <body>
-    <form action="PaginaAdmin.xhtml" method="post">
-	<div class="fondo">
+<h:form >
+    <div class="fondo">
 		<div class="cuadro">
 			<img src="../imagenes/logo1.gif" class="logo"></img>
 			<h2>Iniciar Sesión</h2>
-			<label for="username">Correo</label> <input type="text"
-				name="usuario" placeholder="Ingrese el Usuario" /> <label
-				for="password">Clave</label><input type="password" name="clave"
-				placeholder="Ingrese la Contraseña" />
-				 <br /><br /><h:commandButton value="Iniciar" action="#{beanRegistroPersona.Menu()}"/>
-				 <a href="Index.xhtml">Página Principal</a>
+			<label for="username">Correo</label>
+			 <h:inputText id="usuario"	value="#{beanRegistroPersona.correo}"
+				pt:placeholder="Ingrese el Correo" required="true"></h:inputText>
+
+			<label for="password">Clave</label>
+			<h:inputSecret id="clave" value="#{beanRegistroPersona.clave}"
+				pt:placeholder="Ingrese Contraseña" required="true"></h:inputSecret>
+            <br />
+            <br />
+			<h:commandButton value="Iniciar Sesión"
+				action="#{beanRegistroPersona.iniciarSesion()}" />
+			<a href="index.xhtml">Página Principal</a>
+	
+				 
 		</div>
 	</div>
-	</form>
+</h:form>
 </body>
 </html>

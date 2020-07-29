@@ -90,14 +90,14 @@ public class DaoPersona {
 
 		return result;
 	}
-/*
-	public String eliminarPer(Persona persona) {
+
+	public String eliminarUsuario(Persona persona) {
 		String result = "";
 		PreparedStatement st = null;
 		Cls_conexion cl = new Cls_conexion();
 		try {
-			st = cl.getConexion().prepareStatement("delete from persona where cedula = ? ");
-			st.setString(1, persona.getDoc_identidad());
+			st = cl.getConexion().prepareStatement("delete from usuarios where id_usuario = ? ");
+			st.setInt(1, persona.getId_usuario());
 			if (st.executeUpdate() == 1) {
 				result = "eliminado";
 			} else {
@@ -117,7 +117,7 @@ public class DaoPersona {
 		return result;
 
 	}
-	
+/*	
     public void modificarPer(Persona persona) throws SQLException {
 
         Cls_conexion cl = new Cls_conexion();
@@ -128,7 +128,7 @@ public class DaoPersona {
 
     }
     
-    
+   
     public Persona LeerID(Persona persona) throws Exception {
 
         Persona per = new Persona();
@@ -144,7 +144,7 @@ public class DaoPersona {
         }
         return per;
     }
-    */
+   
     
  /*   public ArrayList<Persona> FindAllCedulas() throws SQLException {
 		ArrayList<Persona> persona = new ArrayList<>();

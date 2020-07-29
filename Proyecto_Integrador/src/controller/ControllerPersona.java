@@ -11,12 +11,12 @@ import model.Persona;
 
 public class ControllerPersona {
 
-	public String enviaDatoEstudiante(int id_usuario, String nombre, String apellido,
+	public String DatosEstudiante(int id_usuario, String nombre, String apellido,
 			String correo, String clave, int id_perfil) {
-		DaoPersona daoAlumno = new DaoPersona();
+		DaoPersona Alumno = new DaoPersona();
 		String respuesta = "";
 		try {
-			daoAlumno.envioPersona(id_usuario, nombre, apellido, correo, clave, id_perfil);
+			Alumno.envioPersona(id_usuario, nombre, apellido, correo, clave, id_perfil);
 			respuesta = "RegCor";
 		} catch (Exception e) {
 			respuesta = "no";
@@ -27,19 +27,20 @@ public class ControllerPersona {
 
 	public String agregarPersona(int id_usuario, String nombre, String apellido, String correo,
 			String clave, int id_perfil) {
-		DaoPersona daoAlumno = new DaoPersona();
-		String respuesta = daoAlumno.RegistrarUsuario(id_usuario, nombre, apellido, correo, clave,
+		DaoPersona Alumno = new DaoPersona();
+		String respuesta = Alumno.RegistrarUsuario(id_usuario, nombre, apellido, correo, clave,
 				id_perfil);
 		return respuesta;
 	}
-/*
+
 	public String eliminarPersona(Persona persona) {
 
 		DaoPersona daoalumno = new DaoPersona();
-		String respuesta = daoalumno.eliminarPer(persona);
+		String respuesta = daoalumno.eliminarUsuario(persona);
 		return respuesta;
 
 	}
+/*
 
 	public void modificarPersona(Persona persona) throws SQLException {
 
@@ -48,8 +49,8 @@ public class ControllerPersona {
 	}
 */
 	public void forward() throws IOException {
-		String uri = "destination.xhtml";
-		FacesContext.getCurrentInstance().getExternalContext().dispatch(uri);
+		String url = "destination.xhtml";
+		FacesContext.getCurrentInstance().getExternalContext().dispatch(url);
 	}
 
 	public ArrayList<Persona> ImprimePersona() throws SQLException {

@@ -46,7 +46,7 @@ public final class Cls_conexion {
 		
 		this.driver ="org.postgresql.Driver";
 		this.user="postgres";
-		this.pwd="RC2301";
+		this.pwd="ama";
 		this.cadena="jdbc:postgresql://localhost:5432/proyecto";
 		this.con=this.crearConexion();
 		
