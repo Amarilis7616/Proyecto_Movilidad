@@ -1,10 +1,13 @@
 package controller;
 
 import java.io.Serializable;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
+
+import com.conexion.Cls_conexion;
 
 import model.Persona;
 
@@ -153,34 +156,38 @@ public class BeanRegistroPersona implements Serializable {
 	public String irRegistro() {
 		return "volReg";
 	}
-/*
+
     public void EliminarDatosPersona(Persona persona) throws SQLException{
         
     	ControllerPersona controller = new ControllerPersona();
-        controller.eliminarPersona(persona);
+        controller.eliminarUsuario(persona);
        
     }
+/*
 
-	public void ModificaDatosPersona() throws SQLException {
+	public void ModificaUsuario() throws SQLException {
 
 		ControllerPersona controller = new ControllerPersona();
 		controller.modificarPersona(persona);
 
 	}
-	
+*/
+  /*  
 	public String leerId(Persona persona) throws Exception {
 	      
 		ControllerPersona controller = new ControllerPersona();
-        Persona per;
+        Persona user;
         
-        per = controller.leerIDPersona(persona);
+        user = controller.leerIDPersona(persona);
         
-        if (per != null) {
-            this.persona = per;
+        if (user != null) {
+            this.persona = user;
         }
         return "editar_user";
     }
 	*/
+	
+	
 	public String iniciarSesion() throws SQLException {
 		ControllerPersona controller = new ControllerPersona();
 
@@ -207,5 +214,33 @@ public class BeanRegistroPersona implements Serializable {
         clearLogin();
         return "no";
     }
+	
+	public String eliminarUsuario(int id) {
+		String result = "";
+		PreparedStatement st = null;
+		Cls_conexion cl = new Cls_conexion();
+		try {
+
+			st = cl.getConexion().prepareStatement("delete from usuarios where id_usuario = ? ");
+			st.setInt(1, id);
+if (st.executeUpdate() == 1) {
+				result = "eliminado";
+			} else {
+				result = "noelim";
+			}
+		} catch (Exception ex) {
+
+			result = ex.getMessage();
+		} finally {
+			try {
+				st.close();
+				cl.getConexion().close();
+			} catch (Exception ex) {
+				result = ex.getMessage();
+			}
+		}
+		return result;
+
+	}
 
 }

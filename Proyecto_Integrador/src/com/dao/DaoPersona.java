@@ -91,6 +91,8 @@ public class DaoPersona {
 		return result;
 	}
 
+	
+	
 	public String eliminarUsuario(Persona persona) {
 		String result = "";
 		PreparedStatement st = null;
@@ -128,25 +130,29 @@ public class DaoPersona {
 
     }
     
-   
+*/  
+	
+/*
     public Persona LeerID(Persona persona) throws Exception {
 
         Persona per = new Persona();
         ResultSet re;
         Cls_conexion cl = new Cls_conexion();
-        re = cl.consulta("select * from persona where cedula = '" + persona.getDoc_identidad() + "'");
+        re = cl.consulta("select * from usuarios where id_usuario = " + persona.getId_usuario() + "");
 
         while (re.next()) {
 
-            per.setDoc_identidad(re.getString("doc_identidad"));
+            per.setId_usuario(re.getInt("id_usuario"));
             per.setClave(re.getString("clave"));
-            per.setCorreo_electronico(re.getString("correo_electronico"));
+            per.setCorreo(re.getString("correo"));
         }
         return per;
     }
    
-    
- /*   public ArrayList<Persona> FindAllCedulas() throws SQLException {
+   /*
+   
+  /*  
+    public ArrayList<Persona> FindAllCedulas() throws SQLException {
 		ArrayList<Persona> persona = new ArrayList<>();
 
 		ResultSet re;

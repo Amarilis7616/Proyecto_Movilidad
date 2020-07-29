@@ -33,7 +33,7 @@ public class ControllerPersona {
 		return respuesta;
 	}
 
-	public String eliminarPersona(Persona persona) {
+	public String eliminarUsuario(Persona persona) {
 
 		DaoPersona daoalumno = new DaoPersona();
 		String respuesta = daoalumno.eliminarUsuario(persona);
@@ -70,6 +70,15 @@ public class ControllerPersona {
 		return daoAlumno.LeerID(persona);
 	}
 */
+	
+	
+	/*public Persona leerIDPersona(Persona persona) throws Exception {
+
+		DaoPersona daoAlumno = new DaoPersona();
+		return daoAlumno.LeerID(persona);
+	}
+	
+	*/
 	public int login(String user, String pass) throws SQLException {
 		DaoPersona daouser = new DaoPersona();
 		for (Persona u : daouser.FindAllPersonas()) {

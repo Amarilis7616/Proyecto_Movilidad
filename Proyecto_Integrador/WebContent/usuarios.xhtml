@@ -21,7 +21,7 @@
 				<li><a href="RegistrarUsuario.xhtml">Registrar Usuarios</a></li>
 				<li><a href="usuarios.xhtml">Listado</a></li>
 				<li><a href="auditoria.xhtml">Auditoria</a></li>
-				<li><a href="#">Cerrar Sesión</a></li>
+				<li><a href="Index.html">Cerrar Sesión</a></li>
 			</ul>
 			</nav>
 		</div>
@@ -63,8 +63,10 @@
 					<h:link value="Cambiar Clave" outcome="cambiarClave" />
 				</h:column>
 				<h:column>
-					<f:facet name="header">BLOQUEAR</f:facet>
-					<h:link  value="Bloquear" outcome="Bloquear" />
+					<f:facet name="header">Eliminar</f:facet>
+					<h:commandButton
+						actionListener="#{beanRegistroPersona.eliminarUsuario(listarUsuarios.id_usuario)}"
+						value="Eliminar" />
 				</h:column>
 			</h:dataTable>
 	</center>
