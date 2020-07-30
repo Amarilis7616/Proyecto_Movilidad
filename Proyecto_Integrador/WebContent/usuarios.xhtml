@@ -34,6 +34,7 @@
 	<h1>USUARIOS REGISTRADOS</h1>
 	
 		<br />
+		<h:form>
 		<h:dataTable id="personas"
 				value="#{beanRegistroPersona.listaPersona()}" var="listarUsuarios"
 				border="1">
@@ -65,10 +66,11 @@
 				<h:column>
 					<f:facet name="header">Eliminar</f:facet>
 					<h:commandButton
-						actionListener="#{beanRegistroPersona.eliminarUsuario(listarUsuarios.id_usuario)}"
+						actionListener="#{beanRegistroPersona.eliminar(listarUsuarios.correo)}"
 						value="Eliminar" />
 				</h:column>
 			</h:dataTable>
+			</h:form>
 	</center>
 
 </h:body>

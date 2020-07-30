@@ -220,7 +220,7 @@ public class BeanRegistroPersona implements Serializable {
         return "no";
     }
 	
-	public String eliminarUsuario(String correo) {
+	public String eliminar(String correo) {
 		String result = "";
 		PreparedStatement st = null;
 		Cls_conexion cl = new Cls_conexion();
