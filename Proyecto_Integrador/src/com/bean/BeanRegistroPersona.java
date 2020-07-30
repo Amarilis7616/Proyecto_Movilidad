@@ -1,4 +1,4 @@
-package controller;
+package com.bean;
 
 import java.io.Serializable;
 import java.sql.PreparedStatement;
@@ -9,6 +9,7 @@ import javax.inject.Named;
 
 import com.conexion.Cls_conexion;
 
+import controller.ControllerPersona;
 import model.Persona;
 
 @Named(value = "beanRegistroPersona")
@@ -220,7 +221,7 @@ public class BeanRegistroPersona implements Serializable {
         return "no";
     }
 	
-	public String eliminarUsuario(String correo) {
+	public String eliminar(String correo) {
 		String result = "";
 		PreparedStatement st = null;
 		Cls_conexion cl = new Cls_conexion();

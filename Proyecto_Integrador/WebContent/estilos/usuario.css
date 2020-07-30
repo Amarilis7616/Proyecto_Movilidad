@@ -57,15 +57,24 @@ body {
       .navegacion ul li a:hover{
       background: #ccc;
       }
-      
-      
-table {
-   width: 70%;
-   border: 1px solid #000;
+
+input[type="submit"] {
+	border: none;
+	outline: none;
+	height: 30px;
+	background: #fec0f7;
+	color: #000000;
+	font-size: 20px;
+	border-radius: 20px;
 }
-th, td {
-   width: 25%;
-   vertical-align: top;
-   border: 1px solid #000;
-   
+
+ input[type="submit"]:hover {
+	
+	cursor: pointer;
+	background: #669bf4;
+	color: #000;
 }
+
+
+
+
