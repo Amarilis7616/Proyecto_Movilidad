@@ -156,6 +156,9 @@ public class BeanRegistroPersona implements Serializable {
 	public String irRegistro() {
 		return "volReg";
 	}
+	
+	
+	/*
 
     public void EliminarDatosPersona(Persona persona) throws SQLException{
         
@@ -163,6 +166,8 @@ public class BeanRegistroPersona implements Serializable {
         controller.eliminarUsuario(persona);
        
     }
+    */
+	
 /*
 
 	public void ModificaUsuario() throws SQLException {
@@ -215,15 +220,15 @@ public class BeanRegistroPersona implements Serializable {
         return "no";
     }
 	
-	public String eliminarUsuario(int id) {
+	public String eliminarUsuario(String correo) {
 		String result = "";
 		PreparedStatement st = null;
 		Cls_conexion cl = new Cls_conexion();
 		try {
 
-			st = cl.getConexion().prepareStatement("delete from usuarios where id_usuario = ? ");
-			st.setInt(1, id);
-if (st.executeUpdate() == 1) {
+			st = cl.getConexion().prepareStatement("delete from usuarios where correo = ? ");
+			st.setString(1, correo);
+           if (st.executeUpdate() == 1) {
 				result = "eliminado";
 			} else {
 				result = "noelim";

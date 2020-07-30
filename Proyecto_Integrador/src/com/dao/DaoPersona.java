@@ -91,7 +91,7 @@ public class DaoPersona {
 		return result;
 	}
 
-	
+/*
 	
 	public String eliminarUsuario(Persona persona) {
 		String result = "";
@@ -119,6 +119,8 @@ public class DaoPersona {
 		return result;
 
 	}
+	
+*/
 /*	
     public void modificarPer(Persona persona) throws SQLException {
 

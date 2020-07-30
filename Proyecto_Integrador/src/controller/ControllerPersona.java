@@ -32,6 +32,8 @@ public class ControllerPersona {
 				id_perfil);
 		return respuesta;
 	}
+	
+	/*
 
 	public String eliminarUsuario(Persona persona) {
 
@@ -40,6 +42,8 @@ public class ControllerPersona {
 		return respuesta;
 
 	}
+	
+	*/
 /*
 
 	public void modificarPersona(Persona persona) throws SQLException {
