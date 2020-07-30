@@ -2,13 +2,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
 
 <head>
 <title>Auditoria</title>
 <meta charset="UTF-8" />
 
 <link rel="stylesheet" href="../estilos/auditoria.css" />
+
 </head>
 <body>
 	<div class="fondo">
@@ -21,7 +23,7 @@
 				<li><a href="RegistrarUsuario.xhtml">Registrar Usuarios</a></li>
 				<li><a href="usuarios.xhtml">Listado</a></li>
 				<li><a href="auditoria.xhtml">Auditoria</a></li>
-				<li><a href="#">Cerrar Sesión</a></li>
+				<li><a href="Index.xhtml">Cerrar Sesión</a></li>
 			</ul>
 			</nav>
 		</div>
@@ -29,49 +31,41 @@
 	</div>
 	<center>
 
-		<h1>Infromación de Auditoria</h1>
+		<h1>Información de Auditoria</h1>
 
 		<br />
-		<table >
+		<p:dataTable id="auditoria" value="#{BAuditoria.listaAuditoria()}"
+			var="listarAuditoria" border="1">
+			<p:column>
+				<f:facet name="header">Tabla</f:facet>    				
+                                #{listarAuditoria.tabla_aud}
+                        </p:column>
+			<p:column>
+				<f:facet name="header">Operación</f:facet>    				
+                                #{listarAuditoria.operacion_aud}
+                        </p:column>
+			<p:column>
+				<f:facet name="header">Valor Anterior</f:facet>    				
+                                #{listarAuditoria.valoranterior_aud}
+                        </p:column>
+			<p:column>
+				<f:facet name="header">Valor Nuevo</f:facet>    				
+                                #{listarAuditoria.valornuevo_aud}
+                        </p:column>
+			<p:column>
+				<f:facet name="header">Fecha Auditoría</f:facet>    				
+                                #{listarAuditoria.fecha_aud}
+                        </p:column>
+			<p:column>
+				<f:facet name="header">Usuario</f:facet>    				
+                                #{listarAuditoria.usuario_aud}
+                        </p:column>
+			<p:column>
+				<f:facet name="header">Esquema</f:facet>    				
+                                #{listarAuditoria.esquema_aud}
+                        </p:column>
 
-			<tr>
-
-				<th>id Auditoria</th>
-				
-				<th>Tabla Auditoria</th>
-
-				<th>Operacion Auditoria</th>
-
-				<th>Valor Anterior</th>
-
-				<th>Valor Nuevo</th>
-
-				<th>Fecha</th>
-
-				<th>Usuario</th>
-				
-				<th>Activar</th>
-
-
-			</tr>
-			<tr>
-
-				<td>1</td>
-
-				<td>tb_subregion</td>
-
-				<td>     </td>
-				<td>New York</td>
-				<td>Estados Unidos</td>
-				<td>15-07-2020</td>
-		        <td>Tatiana Sarango</td>
-		        <td>True</td>	
-
-			</tr>
-
-
-
-		</table>
+		</p:dataTable>
 	</center>
 
 
