@@ -20,18 +20,20 @@ public class Persona implements Serializable {
     private String correo;
     private String clave;
     private int id_perfil;
+    private String descripcion;
     
     public Persona() {
     	
     }
     
-    public Persona(int id_usuario,String nombre, String apellido, String correo, String clave, int id_perfil) {
+    public Persona(int id_usuario,String nombre, String apellido, String correo, String clave, int id_perfil, String descripcion) {
     	this.id_usuario = id_usuario;
     	this.nombre= nombre;
     	this.apellido = apellido;
     	this.correo = correo;
     	this.clave=clave;
     	this.id_perfil = id_perfil;
+    	this.setDescripcion(descripcion);
     }
     
 	public int getId_usuario() {
@@ -80,5 +82,13 @@ public class Persona implements Serializable {
 
 	public void setId_perfil(int id_perfil) {
 		this.id_perfil = id_perfil;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 }

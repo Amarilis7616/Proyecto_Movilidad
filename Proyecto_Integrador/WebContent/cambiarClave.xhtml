@@ -2,7 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough">
 
 <head>
 <title>Cambio de Clave</title>
@@ -13,19 +14,22 @@
 <body>
 	<div class="fondo">
 		<div class="cuadro">
+            <h:form>
 			<img src="../imagenes/logo1.gif" class="logo"></img>
 			<h2>Cambio de Clave</h2>
 			<label for="contraseña actual">Contraseña Actual:</label> <input
 				type="text" name="contraseña actual" placeholder="Contraseña Actual"
-				minlenght="6" equiredMessage="El campo es obligatorio" /> <label
-				for="Nueva Contraseña"> Nueva Contraseña:</label> <input type="text"
-				name="Nueva Contraseña" placeholder="Nueva Contraseña" minlenght="6"
-				equiredMessage="El campo es obligatorio" /> <label
-				for="rncontraseña">Repetir Nueva Contraseña:</label> <input
-				type="text" name="rncontraseña" placeholder="Confirme la Contraseña"
+				minlenght="6" equiredMessage="El campo es obligatorio" />
+			 <label for="Nueva Contraseña"> Nueva Contraseña:</label> <h:inputSecret id="clave" value="#{beanRegistroPersona.clave}"
+				pt:placeholder="Ingrese Nueva Contraseña"></h:inputSecret>
+			 <label for="rnueva"> Confirmar Contraseña:</label> <input
+				type="text" name="contraseña actual" placeholder="Confirme su Contraseña"
 				minlenght="6" equiredMessage="El campo es obligatorio" /> <br />
-			<br /> <input type="submit" value="Guardar Cambios" /> <a
+			<br /> <h:commandButton value="Guardar"
+				action="#{beanRegistroPersona.modificarPer()}">
+			</h:commandButton> <a
 				href="usuarios.xhtml">REGRESAR</a>
+			</h:form>
 		</div>
 	</div>
 </body>

@@ -21,7 +21,7 @@
 				<li><a href="RegistrarUsuario.xhtml">Registrar Usuarios</a></li>
 				<li><a href="usuarios.xhtml">Listado</a></li>
 				<li><a href="auditoria.xhtml">Auditoria</a></li>
-				<li><a href="Index.html">Cerrar Sesión</a></li>
+				<li><a href="Index.xhtml">Cerrar Sesión</a></li>
 			</ul>
 			</nav>
 		</div>
@@ -56,12 +56,12 @@
                         </h:column>
 				<h:column>
 					<f:facet name="header">Tipo</f:facet>    				
-                                #{listarUsuarios.id_perfil}
+                                #{listarUsuarios.descripcion}
                         </h:column>
 				<h:column>
 					<f:facet name="header">Cambiar Clave</f:facet>
 					
-					<h:link value="Cambiar Clave" outcome="cambiarClave" />
+					<h:commandButton action="#{beanRegistroPersona.ingresar(listarUsuarios.correo)}" value="Cambiar Clave" />
 				</h:column>
 				<h:column>
 					<f:facet name="header">Eliminar</f:facet>
