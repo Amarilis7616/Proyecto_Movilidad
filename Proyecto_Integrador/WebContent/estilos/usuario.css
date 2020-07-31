@@ -74,6 +74,27 @@ input[type="submit"] {
 	background: #669bf4;
 	color: #000;
 }
+.header4{
+	border-radius:0.5%;
+	background:rgba(239, 244, 244 , 0.6);
+	width: 60%;
+	
+}
+th {
+	width: 200px;
+	padding: 2px;
+	border-collapse: collapse;
+	background: #1E90FF;
+	color: #000000;
+}
+
+td {
+	width: 200px;
+	padding: 2px;
+	border-collapse: collapse;
+	background: #00CED1;
+	color: #000040;
+}
 
 
 
