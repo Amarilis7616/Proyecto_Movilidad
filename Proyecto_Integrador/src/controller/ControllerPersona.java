@@ -12,11 +12,11 @@ import model.Persona;
 public class ControllerPersona {
 
 	public String DatosEstudiante(int id_usuario, String nombre, String apellido,
-			String correo, String clave, int id_perfil) {
+			String correo, String clave, int id_perfil, String descripcion) {
 		DaoPersona Alumno = new DaoPersona();
 		String respuesta = "";
 		try {
-			Alumno.envioPersona(id_usuario, nombre, apellido, correo, clave, id_perfil);
+			Alumno.envioPersona(id_usuario, nombre, apellido, correo, clave, id_perfil,descripcion);
 			respuesta = "RegCor";
 		} catch (Exception e) {
 			respuesta = "no";

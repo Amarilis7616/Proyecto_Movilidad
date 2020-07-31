@@ -26,6 +26,10 @@ public class BeanRegistroPersona implements Serializable {
 	private String correo;
 	private String clave;
 	private int id_perfil;
+	private String temporal;
+	private String descripcion;
+	
+
 	private Persona persona = new Persona();
 
 	public BeanRegistroPersona() {
@@ -87,13 +91,23 @@ public class BeanRegistroPersona implements Serializable {
 	public void setPersona(Persona persona) {
 		this.persona = persona;
 	}
+	
+	
+	public String getTemporal() {
+		return temporal;
+	}
+
+	public String setTemporal(String temporal) {
+		return this.temporal = temporal;
+	}
+	
 
 	public String almaceneDatosPersona() throws SQLException {
 		int perfil = 2;
 		ControllerPersona controller = new ControllerPersona();
 
 		String respuesta = controller.DatosEstudiante(id_usuario, nombre, apellido,
-				correo, clave, perfil);
+				correo, clave, perfil,descripcion);
 
 		return respuesta;
 	}
@@ -159,15 +173,7 @@ public class BeanRegistroPersona implements Serializable {
 	}
 	
 	
-	/*
-
-    public void EliminarDatosPersona(Persona persona) throws SQLException{
-        
-    	ControllerPersona controller = new ControllerPersona();
-        controller.eliminarUsuario(persona);
-       
-    }
-    */
+	
 	
 /*
 
@@ -248,5 +254,56 @@ public class BeanRegistroPersona implements Serializable {
 		return result;
 
 	}
+	
+	//cambiar clave usuario
+	
+	public String ingresar(String correo) {
+		temporal=setTemporal(correo);
+		return "cambiarClave.xhtml";
+	}
+	
+	public String modificarPer() {
+		String result = "";
+		Cls_conexion cl = new Cls_conexion();
+		PreparedStatement pr = null;
+		String sql = "UPDATE usuarios SET clave = ? where correo = ? ";
+		try {
+			pr = cl.getConexion().prepareStatement(sql);
+			pr.setString(1, clave);
+			pr.setString(2, temporal);
+			if (pr.executeUpdate() == 1) {
+				result = "usuarios.xhtml";
+			} else {
+				result = "usuarios.xhtml";
+			}
+		} catch (Exception ex) {
+			result = ex.getMessage();
+		} finally {
+			try {
+				pr.close();
+				cl.getConexion().close();
+			} catch (Exception ex) {
+				result = ex.getMessage();
+			}
+		}
+
+		return result;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
