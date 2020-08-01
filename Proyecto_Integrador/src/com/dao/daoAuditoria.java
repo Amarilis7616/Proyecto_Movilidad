@@ -17,7 +17,7 @@ public class daoAuditoria {
 
 		ResultSet re;
 		Cls_conexion cl = new Cls_conexion();
-		re = cl.consulta("select * from auditoria.tb_auditoria where id_aud > 8");
+		re = cl.consulta("select * from auditoria.tb_auditoria where id_aud > 6");
 		int id_aud;
 		String tabla_aud;
 		String operacion_aud;
