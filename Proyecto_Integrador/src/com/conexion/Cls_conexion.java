@@ -46,7 +46,11 @@ public final class Cls_conexion {
 		
 		this.driver ="org.postgresql.Driver";
 		this.user="postgres";
+<<<<<<< HEAD
 		this.pwd="1234";
+=======
+		this.pwd="ama";
+>>>>>>> branch 'master' of https://github.com/Amarilis7616/Proyecto_Movilidad.git
 		this.cadena="jdbc:postgresql://localhost:5432/Global_Mobility_D";
 		this.con=this.crearConexion();
 		
