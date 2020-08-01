@@ -1,14 +1,15 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-<title>Listado Usuarios</title>
-<meta charset="UTF-8" />
+	<title>Listado Usuarios</title>
+	<meta charset="UTF-8" />
 
-<link rel="stylesheet" href="../estilos/usuario.css" />
+	<link rel="stylesheet" href="../estilos/usuario.css" />
 </h:head>
 <h:body>
 	<div class="fondo">
@@ -27,52 +28,53 @@
 		</div>
 		</header>
 	</div>
-	
-	
-	<center>
-	
-	<h1>USUARIOS REGISTRADOS</h1>
-	
-		<br />
-		<h:form>
-		<h:dataTable id="personas"
-				value="#{beanRegistroPersona.listaPersona()}" var="listarUsuarios"
-				border="1">
-				<h:column>
-					<f:facet name="header">Nombre Usuario</f:facet>    				
+
+	<div >
+		<center>
+			<h1>USUARIOS REGISTRADOS</h1>
+			<div class="header4">
+			<br />
+			<h:form>
+				<h:dataTable id="personas"
+					value="#{beanRegistroPersona.listaPersona()}" var="listarUsuarios"
+					border="1">
+					<h:column>
+						<f:facet name="header">Nombre Usuario</f:facet>    				
                                 #{listarUsuarios.nombre}
                         </h:column>
-				<h:column>
-					<f:facet name="header">Apellido Usuario</f:facet>    				
+					<h:column>
+						<f:facet name="header">Apellido Usuario</f:facet>    				
                                 #{listarUsuarios.apellido}
                         </h:column>
-				<h:column>
-					<f:facet name="header">Correo</f:facet>    				
+					<h:column>
+						<f:facet name="header">Correo</f:facet>    				
                                 #{listarUsuarios.correo}
                         </h:column>
-				<h:column>
-					<f:facet name="header">Clave</f:facet>    				
+					<h:column>
+						<f:facet name="header">Clave</f:facet>    				
                                 #{listarUsuarios.clave}
                         </h:column>
-				<h:column>
-					<f:facet name="header">Tipo</f:facet>    				
+					<h:column>
+						<f:facet name="header">Tipo</f:facet>    				
                                 #{listarUsuarios.descripcion}
                         </h:column>
-				<h:column>
-					<f:facet name="header">Cambiar Clave</f:facet>
-					
-					<h:commandButton action="#{beanRegistroPersona.ingresar(listarUsuarios.correo)}" value="Cambiar Clave" />
-				</h:column>
-				<h:column>
-					<f:facet name="header">Eliminar</f:facet>
-					<h:commandButton
-					
-						actionListener="#{beanRegistroPersona.eliminar(listarUsuarios.correo)}"
-						value="Eliminar" />
-				</h:column>
-			</h:dataTable>
-			</h:form>
-	</center>
+					<h:column>
+						<f:facet name="header">Cambiar Clave</f:facet>
 
+						<h:commandButton
+							action="#{beanRegistroPersona.ingresar(listarUsuarios.correo)}"
+							value="Cambiar Clave" />
+					</h:column>
+					<h:column>
+						<f:facet name="header">Eliminar</f:facet>
+						<h:commandButton
+							actionListener="#{beanRegistroPersona.eliminar(listarUsuarios.correo)}"
+							value="Eliminar" />
+					</h:column>
+				</h:dataTable>
+			</h:form>
+			</div>
+		</center>
+	</div>
 </h:body>
 </html>
