@@ -69,5 +69,27 @@ th, td {
    border: 1px solid #000;
    
 }
+.header4{
+	border-radius:0.5%;
+	background:rgba(239, 244, 244 , 0.6);
+	width: 60%;
+	
+}
+th {
+	width: 200px;
+	padding: 2px;
+	border-collapse: collapse;
+	background:rgba(90, 194, 193, 1);
+	color: #000000;
+}
+
+td {
+	width: 200px;
+	padding: 2px;
+	border-collapse: collapse;
+	background:rgba(90, 194, 193, 0.5);
+	color: #000040;
+}
+
 
 

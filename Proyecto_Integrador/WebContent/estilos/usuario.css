@@ -84,7 +84,7 @@ th {
 	width: 200px;
 	padding: 2px;
 	border-collapse: collapse;
-	background: #1E90FF;
+	background:rgba(90, 194, 193, 1);
 	color: #000000;
 }
 
@@ -92,7 +92,7 @@ td {
 	width: 200px;
 	padding: 2px;
 	border-collapse: collapse;
-	background: #00CED1;
+	background:rgba(90, 194, 193, 0.5);
 	color: #000040;
 }
 

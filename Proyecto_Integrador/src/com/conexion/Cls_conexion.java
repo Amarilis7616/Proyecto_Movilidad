@@ -47,7 +47,7 @@ public final class Cls_conexion {
 		this.driver ="org.postgresql.Driver";
 		this.user="postgres";
 		this.pwd="1234";
-		this.cadena="jdbc:postgresql://localhost:5432/Global_Mobility";
+		this.cadena="jdbc:postgresql://localhost:5432/Global_Mobility_D";
 		this.con=this.crearConexion();
 		
 	}
