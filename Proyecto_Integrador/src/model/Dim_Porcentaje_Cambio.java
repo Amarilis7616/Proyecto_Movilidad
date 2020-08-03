@@ -1,6 +1,6 @@
 package model;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class Dim_Porcentaje_Cambio {
 	private int sk_porcentaje_cambio;
@@ -15,24 +15,24 @@ public class Dim_Porcentaje_Cambio {
 	private Date v_hasta;
 	private int version;
 
-	public Dim_Porcentaje_Cambio(int sk_porc_camb,
-			int pk_porc_camb, int porc_vent,int porc_sup_farm,
-			int porc_parq,int porc_est_trans, int porc_lug_trab,
-			int porc_resid, Date v_desde, Date v_hasta, int version) {
-		this.sk_porcentaje_cambio=sk_porc_camb;
-		this.pk_porcentaje_cambio=pk_porc_camb;
-		this.porcentaje_ventas=porc_vent;
-		this.porcentaje_supermercado_farmacia=porc_sup_farm;
-		this.porcentaje_parques=porc_parq;
-		this.porcentaje_estaciones_transito=porc_est_trans;
-		this.porcentaje_lugares_trabajo=porc_lug_trab;
-		this.porcentaje_residencias=porc_resid;
-		this.v_desde=v_desde;
-		this.v_hasta=v_hasta;
-		this.version=version;
-
+	public Dim_Porcentaje_Cambio(int sk_porcentaje_cambio, int pk_porcentaje_cambio, int porcentaje_ventas,
+			int porcentaje_supermercado_farmacia, int porcentaje_parques, int porcentaje_estaciones_transito,
+			int porcentaje_lugares_trabajo, int porcentaje_residencias, Date v_desde, Date v_hasta, int version) {
+		super();
+		this.sk_porcentaje_cambio = sk_porcentaje_cambio;
+		this.pk_porcentaje_cambio = pk_porcentaje_cambio;
+		this.porcentaje_ventas = porcentaje_ventas;
+		this.porcentaje_supermercado_farmacia = porcentaje_supermercado_farmacia;
+		this.porcentaje_parques = porcentaje_parques;
+		this.porcentaje_estaciones_transito = porcentaje_estaciones_transito;
+		this.porcentaje_lugares_trabajo = porcentaje_lugares_trabajo;
+		this.porcentaje_residencias = porcentaje_residencias;
+		this.v_desde = v_desde;
+		this.v_hasta = v_hasta;
+		this.version = version;
 	}
 
+	
 	public Dim_Porcentaje_Cambio() {
 
 	}

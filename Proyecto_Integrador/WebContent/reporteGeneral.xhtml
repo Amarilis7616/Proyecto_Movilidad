@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+      
+      
+<h:head>
+<title>Reportes Usuario</title>
+<meta charset="UTF-8" />
+
+<link rel="stylesheet" href="../estilos/reporte_usuario.css" />
+
+</h:head>
+<h:body>
+
+	<header class="header">
+	<div class="container  logo-nav-conteiner">
+		<a href="#" class="logo">Reporte de Movilidad de Google</a>
+		<nav class="navegacion">
+		<ul class="menu">
+			<li><a href="PaginaRegistrado.xhtml">Inicio</a></li>
+			<li><a href="Reportes.xhtml">Reportes</a></li>
+			<li><a href="cambiarClave.xhtml">Cambio de Clave</a></li>
+			<li><a href="Index.xhtml">Cerrar Sesión</a></li>
+		</ul>
+		</nav>
+	</div>
+	</header>
+	<br />
+	<br />
+	<div align="center">
+
+		<h:form id="frmFiltro">
+			<p:panel header="Filtros de busqueda">
+				<p:panelGrid>
+					<p:row>
+						<p:column>Seleccione Mes:</p:column>
+						<p:column>
+							<p:selectOneMenu id="somMes" required="true"
+								value="#{graficos.codPais}">
+								<f:selectItems value="#{graficos.listaPais}" />
+							</p:selectOneMenu>
+							<p:message for="somMes" />
+						</p:column>
+					</p:row>
+					<p:row>
+						<p:column colspan="2">
+							<p:commandButton icon="ui-icon-search" title="Buscar"
+								value="Buscar" actionListener="#{graficos.buscarAum()}"
+								process="@form" update=":frmResultado,:frmFiltro" />
+						</p:column>
+					</p:row>
+				</p:panelGrid>
+			</p:panel>
+		</h:form>
+
+	</div>	
+	<h:form id="frmResultado">
+		<p:panel header="Resultado">
+			<h:outputText value="#{graficos.resultado}" />
+			<p:dataTable rows="10" paginator="true" paginatorPosition="bottom"
+				value="#{graficos.listalinea}" var="rep">
+				<p:column headerText="Provincia">
+					<h:outputText value="#{rep.pais}" />
+				</p:column>
+				<p:column headerText="Número de personas">
+					<h:outputText value="#{rep.parques}" />
+				</p:column>
+			</p:dataTable>
+
+			<div align="center">
+				<p:chart type="pie" model="#{graficos.torta2}"
+					style="width:800px;height:790px"
+					rendered="#{graficos.torta2 != null}" />
+			</div>
+
+
+		</p:panel>
+
+	</h:form>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;
+
+	<a href=""> <p:commandButton type="button" class="boton"
+			value="Descargar Reporte Total en Gráfico Pastel" />
+	</a>
+		 &nbsp;&nbsp;&nbsp;&nbsp;
+		 	<a href="TodosProvinciaAnio"> <p:commandButton type="button"
+			class="boton" value="Descargar Reporte Textual detallado por Año" />
+	</a>
+		 &nbsp;&nbsp;&nbsp;&nbsp;
+
+		<br></br>
+	<br></br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="reportGeo.xhtml"> <p:commandButton type="button"
+			class="boton" value="Regresar a Filtros Geográficos" />
+	</a>
+		 &nbsp;&nbsp;&nbsp;&nbsp;
+
+	<a href="menuReportes.xhtml"> <p:commandButton type="button"
+			class="boton" value="Regresar al Menú de Reportes" />
+	</a>
+		 &nbsp;&nbsp;&nbsp;&nbsp;
+		
+	<br />
+</h:body>
+</html>

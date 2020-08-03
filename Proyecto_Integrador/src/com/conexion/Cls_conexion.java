@@ -112,4 +112,15 @@ public final class Cls_conexion {
 	
 	}
     // }
+	
+	public void cerrarConexion() {
+		try {
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	
 }
