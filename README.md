@@ -14,26 +14,15 @@ _Solicitar permisos a los actores.
 * [ECLIPSE](https://www.eclipse.org/downloads/packages/release/juno/sr2/eclipse-ide-java-developers)
 * [POSTGRES](https://www.postgresql.org/download/)
 * [PENTAHO](https://sourceforge.net/projects/pentaho/)
-## Contribuyendo 
-
-Por favor.
-
-## Wiki 📖
-
-Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra página hay más información()
-
-## Versionado 📌
-
-Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/tu/proyecto/tags).
 
 ## Autores ✒️
-* **Aamarilis Cueva** - *Trabajo Inicial* - (https://github.com/Amarilis7616)
+* **Amarilis Cueva** - *Trabajo Inicial* - (https://github.com/Amarilis7616)
 * **Tatiana Sarango** - *Documentación* - (https://github.com/tsarango)
 * **Sebastián Espinel** - *Base de datos* - (https://github.com/JEspinel)
 * También puede mirar la lista (https://github.com/Amarilis7616/Proyecto_Movilidad.git) quíenes han participado en este proyecto. 
 ## Licencia 📄
 
-Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md](LICENSE.md) para detalles
+Este proyecto está bajo la Licencia Apache 2.0 - mira el archivo [https://www.apache.org/licenses/LICENSE-2.0] para detalles.
 
 ## Expresiones de Gratitud 🎁
-
+El agradecieminto de este proyecto va dirigido primero a Dios, también para nuestros tres docentes Ing. Patsy Prieto, Ing. Rodrigo Tufiño, Ing Ricardo Albarracín que gracuas a sus conocimientos se pudo concluir con éxito, a nuestros familiares y demás personas que estuvieron apoyandonos durante este proceso; y en especial a mi grupo que trabajo duro con cada una de sus tareas.
