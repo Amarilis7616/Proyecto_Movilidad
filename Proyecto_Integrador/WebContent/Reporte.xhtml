@@ -1,45 +1,46 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
 
-<head>
-<title>Reportes</title>
-<meta charset="UTF-8" />
+<h:head>
+	<title>Menú Reportes</title>
+	<meta charset="UTF-8" />
 
-<link rel="stylesheet" href="../estilos/reporte.css" />
-</head>
+	<link rel="stylesheet" href="../estilos/reporte.css" />
 
-<body>
+</h:head>
+<h:body>
 
 	<header class="header">
 	<div class="container  logo-nav-conteiner">
-		<a href="#" class="logo">Reporte de Movilidad de Google</a>
-				<nav class="navegacion">
+		<img src="../imagenes/logo_mg.jpeg" width="250" height="52"/>
+		<nav class="navegacion">
 		<ul class="menu">
-			<li><a href="Index.xhtml">Inicio</a></li>
-			<li><a href="Contacto.xhtml">Contacto</a></li>
-			<li><a href="IniciarSesion.xhtml">Login</a></li>
-			<li><a href="https://github.com/Amarilis7616/Proyecto_Movilidad">Repositorio</a></li>
-			<li><a href="Reporte.xhtml">Reporte</a></li>
+			<li><a href="PaginaRegistrado.xhtml">Inicio</a></li>
+			<li><a href="Reporte.xhtml">Reportes</a></li>
+			<li><a href="cambiarClave.xhtml">Cambio de Clave</a></li>
+			<li><a href="Index.xhtml">Cerrar Sesión</a></li>
 		</ul>
 		</nav>
 	</div>
 	</header>
+	<br /><br /><br /><br /><br /><br /><br />
 	<center>
-	   <div class="reporte1">
-	   <h2>Reporte General</h2>
-	   <img src="../imagenes/reporte_ciudad.jpeg" width="600" height="580" />
-	   <div class="cuadro">
-	   <input type="submit"	value="Exportar" />
-	   </div>
-	   
-	   
-	   </div>
-	
-	
-	
+	<div class="cuadro">
+		
+		<ul>
+			<br />
+			<li id="item-uno"><a href="reporteFarma.xhtml">Reportes
+					Farmacias</a></li>
+			<br />
+			<li id="item-dos"><a href="reporteRecre.xhtml">Reportes
+					Recrfeación</a></li>
+
+		</ul>
+		
+	</div>
 	</center>
-</body>
+</h:body>
 </html>
