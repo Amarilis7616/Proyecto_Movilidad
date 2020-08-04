@@ -24,13 +24,6 @@ public class controllerFecha {
 		return daofecha.getMeses();
 	}
 	
-	/*
 	
-	public ArrayList<String> ImprimeAnios() throws SQLException {
-		daoFecha daofecha;
-		daofecha = new daoFecha();
-		return daofecha.getYears();
-	}
-	*/
 
 }

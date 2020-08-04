@@ -100,13 +100,7 @@ public class beanFecha implements Serializable{
 		return controller.ImprimeMeses();
 	}
 	
-	/*
 	
-	public ArrayList<String> listaAnios() throws SQLException {
-		controllerFecha controller = new controllerFecha();
-		return controller.ImprimeAnios();
-	}
-	*/
 	
 
 }

@@ -43,35 +43,25 @@ public class graficos implements Serializable {
 	private String codMes;
 	private String codPar;
 	private String resultado;
-	private Integer anio1;
-	private Integer anio2;
 	private List<SelectItem> listaProvincia;
 	private List<SelectItem> listaPais;
 	private List<SelectItem> listaAnios;
 	private List<SelectItem> listaMes;
 	private List<SelectItem> listaEtnia;
 	private PieChartModel torta;
-	private PieChartModel torta2;
 	private BarChartModel barra;
-	private HorizontalBarChartModel horizontalBarModel;
 	private List<ReporteInfor> lista;
 	private List<DatosPais> listalinea;
 	List<ReporteInfor> reporte;
 	List<ReporteInfor> reportecron;
 	List<DatosPais> reportepais;
-	List<ReportesCon> reportegen;
 	List<ReporteInfor> reportepar;
-	private List<ReportesCon> hombrexan;
-	private List<ReportesCon> mujerxan;
-	
-	
-	
+		
 	@PostConstruct
 	private void init() {
 		listaProvincia = new ArrayList<SelectItem>();
 		listaPais = new ArrayList<SelectItem>();
 		listaMes = new ArrayList<SelectItem>();
-		listaEtnia = new ArrayList<SelectItem>();
 		daoSubregion daoProvincia = new daoSubregion();
 		daoFecha daoFecha = new daoFecha();
 		daoFactReport daof=new daoFactReport();
@@ -145,22 +135,7 @@ public class graficos implements Serializable {
 		this.listaAnios = listaAnios;
 	}
 
-	public Integer getAnio1() {
-		return anio1;
-	}
-
-	public void setAnio1(Integer anio1) {
-		this.anio1 = anio1;
-	}
-
-	public Integer getAnio2() {
-		return anio2;
-	}
-
-	public void setAnio2(Integer anio2) {
-		this.anio2 = anio2;
-	}
-
+	
 	public List<ReporteInfor> getReporte() {
 		return reporte;
 	}
@@ -217,38 +192,7 @@ public class graficos implements Serializable {
 		this.barra = barra;
 	}
 
-	public HorizontalBarChartModel getHorizontalBarModel() {
-		return horizontalBarModel;
-	}
-
-	public void setHorizontalBarModel(HorizontalBarChartModel horizontalBarModel) {
-		this.horizontalBarModel = horizontalBarModel;
-	}
-
-	public List<ReportesCon> getHombrexan() {
-		return hombrexan;
-	}
-
-	public void setHombrexan(List<ReportesCon> hombrexan) {
-		this.hombrexan = hombrexan;
-	}
-
-	public List<ReportesCon> getMujerxan() {
-		return mujerxan;
-	}
-
-	public void setMujerxan(List<ReportesCon> mujerxan) {
-		this.mujerxan = mujerxan;
-	}
-
-	public List<ReportesCon> getReportegen() {
-		return reportegen;
-	}
-
-	public void setReportegen(List<ReportesCon> reportegen) {
-		this.reportegen = reportegen;
-	}
-
+	
 	public List<SelectItem> getListaEtnia() {
 		return listaEtnia;
 	}
@@ -274,13 +218,7 @@ public class graficos implements Serializable {
 	public void setReportepar(List<ReporteInfor> reportepar) {
 		this.reportepar = reportepar;
 	}
-	public PieChartModel getTorta2() {
-		return torta2;
-	}
-
-	public void setTorta2(PieChartModel torta2) {
-		this.torta2 = torta2;
-	}
+	
 
 	
 
@@ -407,7 +345,7 @@ public class graficos implements Serializable {
 				torta.set(dr.getDatos(), dr.getContador());
 			}
 
-			torta.setTitle("Provincias vs Años");
+			torta.setTitle("Países con Mayor movilidad en Áreas Recreativas");
 			torta.setLegendPosition("e");
 			torta.setFill(true);
 			torta.setShowDataLabels(true);
@@ -415,73 +353,9 @@ public class graficos implements Serializable {
 		}
 	    
 	    
-/*
-	public void buscarGen() {
-		resultado = "Proceso ejecutado";
-		graficarGenero();
-	}
 	
-	
-	
-	
-	public void graficar() {
-		torta = new PieChartModel();
-		DaoReportes dao = new DaoReportes();
-		lista = dao.consultaPxAnio(anio1, anio2);
 
-		for (DatosReportes dr : lista) {
-			torta.set(dr.getDatos(), dr.getContador());
-		}
 
-		torta.setTitle("Provincias vs Años");
-		torta.setLegendPosition("e");
-		torta.setFill(true);
-		torta.setShowDataLabels(true);
-		torta.setDiameter(300);
-
-	}
-	
-	
-*/	
-
-	
-/*
-	public void graficarGenero() {
-		DaoReportes dao = new DaoReportes();
-		horizontalBarModel = new HorizontalBarChartModel();
-		ChartSeries boys = new ChartSeries();
-		hombrexan = dao.hombrexanio(anio1, anio2);
-		mujerxan = dao.mujerxanio(anio1, anio2);
-		boys.setLabel("Hombres");
-		for (int i = 0; i < hombrexan.size(); i++) {
-
-			boys.set(hombrexan.get(i).getYear(), hombrexan.get(i).getContador());
-		}
-
-		ChartSeries girls = new ChartSeries();
-		girls.setLabel("Mujeres");
-		for (int i = 0; i < mujerxan.size(); i++) {
-
-			girls.set(mujerxan.get(i).getYear(), mujerxan.get(i).getContador());
-		}
-
-		horizontalBarModel.addSeries(boys);
-		horizontalBarModel.addSeries(girls);
-
-		horizontalBarModel.setTitle("Género Vs Años");
-		horizontalBarModel.setLegendPosition("e");
-		horizontalBarModel.setStacked(true);
-
-		Axis xAxis = horizontalBarModel.getAxis(AxisType.X);
-		xAxis.setLabel("Nacimientos");
-		xAxis.setMin(0);
-		xAxis.setMax(2000);
-
-		Axis yAxis = horizontalBarModel.getAxis(AxisType.Y);
-		yAxis.setLabel("Género");
-
-	}
-*/
 	
 
 	

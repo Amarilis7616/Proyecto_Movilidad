@@ -94,57 +94,5 @@ public class daoFecha {
 		return lista_fechas;
 	}
 	
-/*
-	public ArrayList<String> getYears() {
-		ArrayList<String> lista_anios = new ArrayList<>();
-		Cls_conexion cl = new Cls_conexion();
-		try {
-			ResultSet re;
-			re = cl.consulta("select anio  from dim_fecha where anio >= 2035 group by anio order by anio");
 
-			while (re.next()) {
-
-				lista_anios.add(re.getString(1));
-			}
-
-		} catch (Exception e) {
-			System.out.println(e);
-
-		} finally {
-			try {
-
-				cl.getConexion().close();
-			} catch (Exception ex) {
-				ex.getMessage();
-			}
-		}
-		return lista_anios;
-	}
-
-	public List<SelectItem> obtenerYears() {
-		List<SelectItem> lista_anios = new ArrayList<>();
-		lista_anios.add(new SelectItem(null, "Seleccione"));
-		Cls_conexion cl = new Cls_conexion();
-		try {
-			ResultSet re;
-			re = cl.consulta("select anio  from dim_fecha where anio >= 2019 group by anio order by anio");
-
-			while (re.next()) {
-				lista_anios.add(new SelectItem(re.getString(1)));
-			}
-
-		} catch (Exception e) {
-			System.out.println(e);
-
-		} finally {
-			try {
-
-				cl.getConexion().close();
-			} catch (Exception ex) {
-				ex.getMessage();
-			}
-		}
-		return lista_anios;
-	}
-	*/
 }

@@ -171,34 +171,7 @@ public class BeanRegistroPersona implements Serializable {
 	public String irRegistro() {
 		return "volReg";
 	}
-	
-	
-	
-	
-/*
-
-	public void ModificaUsuario() throws SQLException {
-
-		ControllerPersona controller = new ControllerPersona();
-		controller.modificarPersona(persona);
-
-	}
-*/
-  /*  
-	public String leerId(Persona persona) throws Exception {
-	      
-		ControllerPersona controller = new ControllerPersona();
-        Persona user;
-        
-        user = controller.leerIDPersona(persona);
-        
-        if (user != null) {
-            this.persona = user;
-        }
-        return "editar_user";
-    }
-	*/
-	
+		
 	
 	public String iniciarSesion() throws SQLException {
 		ControllerPersona controller = new ControllerPersona();

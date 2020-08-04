@@ -1,85 +1,43 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
-      
-      
-<h:head>
-<title>Reportes Usuario</title>
-<meta charset="UTF-8" />
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
 
-<link rel="stylesheet" href="../estilos/reporte_usuario.css" />
+
+<h:head>
+	<title>Reportes Usuario</title>
+	<meta charset="UTF-8" />
+
+	<link rel="stylesheet" href="../estilos/reporte_usuario.css" />
 
 </h:head>
 <h:body>
 
 	<header class="header">
 	<div class="container  logo-nav-conteiner">
-		<img src="../imagenes/logo_mg.jpeg" width="250" height="52"/>
+		<img src="../imagenes/logo_mg.jpeg" width="250" height="52" />
 		<nav class="navegacion">
 		<ul class="menu">
 			<li><a href="Index.xhtml">Inicio</a></li>
-<<<<<<< HEAD
-			<li><a href="Reportes.xhtml">Reportes</a></li>
-			<li><a href="cambiarClave.xhtml">Cambio de Clave</a></li>
-			<li><a href="Index.xhtml">Cerrar Sesión</a></li>
-=======
 			<li><a href="Contacto.xhtml">Contacto</a></li>
 			<li><a href="IniciarSesion.xhtml">Login</a></li>
 			<li><a href="https://github.com/Amarilis7616/Proyecto_Movilidad">Repositorio</a></li>
 			<li><a href="reporteGeneral.xhtml">Reporte</a></li>
->>>>>>> branch 'master' of https://github.com/Amarilis7616/Proyecto_Movilidad.git
+
 		</ul>
 		</nav>
 	</div>
 	</header>
 	<br />
 	<br />
-	<div align="center">
-	</div>	
+	<div align="center"></div>
 	<h:panelGrid id="panel">
-			<p:chart type="pie" model="#{graficos.torta}"
-				style="width:1500px;height:600px;" />
+		<p:chart type="pie" model="#{graficos.torta}"
+			style="width:1500px;height:600px;" />
 
-		</h:panelGrid>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;
+	</h:panelGrid>
 
-	<a href=""> <p:commandButton type="button" class="boton"
-			value="Descargar Reporte Total en Gráfico Pastel" />
-	</a>
-		 &nbsp;&nbsp;&nbsp;&nbsp;
-		 	<a href="TodosProvinciaAnio"> <p:commandButton type="button"
-			class="boton" value="Descargar Reporte Textual detallado por Año" />
-	</a>
-		 &nbsp;&nbsp;&nbsp;&nbsp;
-
-		<br></br>
-	<br></br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	<a href="reportGeo.xhtml"> <p:commandButton type="button"
-			class="boton" value="Regresar a Filtros Geográficos" />
-	</a>
-		 &nbsp;&nbsp;&nbsp;&nbsp;
-
-	<a href="Index.xhtml"> <p:commandButton type="button"
-			class="boton" value="Regresar al Inicio" />
-	</a>
-		 &nbsp;&nbsp;&nbsp;&nbsp;
-		
-	<br />
 </h:body>
 </html>
