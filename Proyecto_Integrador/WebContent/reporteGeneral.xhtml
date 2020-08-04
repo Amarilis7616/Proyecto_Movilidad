@@ -20,7 +20,7 @@
 		<a href="#" class="logo">Reporte de Movilidad de Google</a>
 		<nav class="navegacion">
 		<ul class="menu">
-			<li><a href="PaginaRegistrado.xhtml">Inicio</a></li>
+			<li><a href="Index.xhtml">Inicio</a></li>
 			<li><a href="Reportes.xhtml">Reportes</a></li>
 			<li><a href="cambiarClave.xhtml">Cambio de Clave</a></li>
 			<li><a href="Index.xhtml">Cerrar Sesión</a></li>
@@ -31,55 +31,12 @@
 	<br />
 	<br />
 	<div align="center">
-
-		<h:form id="frmFiltro">
-			<p:panel header="Filtros de busqueda">
-				<p:panelGrid>
-					<p:row>
-						<p:column>Seleccione Mes:</p:column>
-						<p:column>
-							<p:selectOneMenu id="somMes" required="true"
-								value="#{graficos.codPais}">
-								<f:selectItems value="#{graficos.listaPais}" />
-							</p:selectOneMenu>
-							<p:message for="somMes" />
-						</p:column>
-					</p:row>
-					<p:row>
-						<p:column colspan="2">
-							<p:commandButton icon="ui-icon-search" title="Buscar"
-								value="Buscar" actionListener="#{graficos.buscarAum()}"
-								process="@form" update=":frmResultado,:frmFiltro" />
-						</p:column>
-					</p:row>
-				</p:panelGrid>
-			</p:panel>
-		</h:form>
-
 	</div>	
-	<h:form id="frmResultado">
-		<p:panel header="Resultado">
-			<h:outputText value="#{graficos.resultado}" />
-			<p:dataTable rows="10" paginator="true" paginatorPosition="bottom"
-				value="#{graficos.listalinea}" var="rep">
-				<p:column headerText="Provincia">
-					<h:outputText value="#{rep.pais}" />
-				</p:column>
-				<p:column headerText="Número de personas">
-					<h:outputText value="#{rep.parques}" />
-				</p:column>
-			</p:dataTable>
+	<h:panelGrid id="panel">
+			<p:chart type="pie" model="#{graficos.torta}"
+				style="width:1500px;height:600px;" />
 
-			<div align="center">
-				<p:chart type="pie" model="#{graficos.torta2}"
-					style="width:800px;height:790px"
-					rendered="#{graficos.torta2 != null}" />
-			</div>
-
-
-		</p:panel>
-
-	</h:form>
+		</h:panelGrid>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

@@ -20,7 +20,7 @@
 		<nav class="navegacion">
 		<ul class="menu">
 			<li><a href="PaginaRegistrado.xhtml">Inicio</a></li>
-			<li><a href="Reportes.xhtml">Reportes</a></li>
+			<li><a href="Reporte.xhtml">Reportes</a></li>
 			<li><a href="cambiarClave.xhtml">Cambio de Clave</a></li>
 			<li><a href="Index.xhtml">Cerrar Sesión</a></li>
 		</ul>
@@ -28,34 +28,8 @@
 	</div>
 	</header>
 	<br />
+	
 	<div align="center">
-
-		<h:form id="frmFiltro">
-			<p:panel header="Filtros de busqueda">
-				<p:panelGrid>
-					<p:row>
-						<p:column>Seleccione Mes:</p:column>
-						<p:column>
-							<p:selectOneMenu id="somMes" required="true"
-								value="#{graficos.codMes}">
-								<f:selectItems value="#{graficos.listaMes}" />
-							</p:selectOneMenu>
-							<p:message for="somMes" />
-						</p:column>
-					</p:row>
-					<p:row>
-						<p:column colspan="2">
-							<p:commandButton icon="ui-icon-search" title="Buscar"
-								value="Buscar" actionListener="#{graficos.buscarCron()}"
-								process="@form" update=":frmResultado,:frmFiltro" />
-						</p:column>
-					</p:row>
-				</p:panelGrid>
-			</p:panel>
-		</h:form>
-
-	</div>
-
 	<h:form id="frmResultado">
 		<p:panel header="Resultado">
 			<h:outputText value="#{graficos.resultado}" />
@@ -71,50 +45,15 @@
 
 			<div align="center">
 				<p:chart type="bar" model="#{graficos.barra}"
-					style="width:1200px;height:1200px"
-					rendered="#{graficos.barra != null}" />
+					style="width:1200px;height:1200px" />
 			</div>
 
 		</p:panel>
 
 	</h:form>
+	</div>
 	<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-
-
-	<a href=""> <p:commandButton type="button"
-			class="boton" value="Descargar Reporte Total en Gráfico de Barras" />
-	</a>
-		 &nbsp;&nbsp;&nbsp;&nbsp;
-		
-	<a href="TodosAniosxMes"> <p:commandButton type="button"
-			class="boton" value="Descargar Reporte Textual detallado por Año" />
-	</a>
-		 &nbsp;&nbsp;&nbsp;&nbsp;
-<br />
-	<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		
-	<a href="menuReportes.xhtml"> <p:commandButton type="button"
-			class="boton" value="Regresar al Menú de Reportes" />
-	</a>
-		 &nbsp;&nbsp;&nbsp;&nbsp;
-	<br />
 	
 	
 

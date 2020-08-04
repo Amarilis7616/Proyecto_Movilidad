@@ -60,7 +60,7 @@ public class graficos implements Serializable {
 	List<ReporteInfor> reportecron;
 	List<DatosPais> reportepais;
 	List<ReportesCon> reportegen;
-	List<DatosPais> reportepar;
+	List<ReporteInfor> reportepar;
 	private List<ReportesCon> hombrexan;
 	private List<ReportesCon> mujerxan;
 	
@@ -72,14 +72,14 @@ public class graficos implements Serializable {
 		listaPais = new ArrayList<SelectItem>();
 		listaMes = new ArrayList<SelectItem>();
 		listaEtnia = new ArrayList<SelectItem>();
-		listaAnios = new ArrayList<>();
 		daoSubregion daoProvincia = new daoSubregion();
 		daoFecha daoFecha = new daoFecha();
 		daoFactReport daof=new daoFactReport();
 		listaProvincia = daoProvincia.obtenerProvincias();
 		listaMes = daoFecha.ObtenerMeses();
 		listaPais= daof.obtenerPaises();
-		
+		buscarAum();
+		buscarCron();
 		
 
 	}
@@ -267,10 +267,11 @@ public class graficos implements Serializable {
 		this.codPar = codPar;
 	}
 	
-	public List<DatosPais> getReportepar() {
+	
+	public List<ReporteInfor> getReportepar() {
 		return reportepar;
 	}
-	public void setReportepar(List<DatosPais> reportepar) {
+	public void setReportepar(List<ReporteInfor> reportepar) {
 		this.reportepar = reportepar;
 	}
 	public PieChartModel getTorta2() {
@@ -323,7 +324,7 @@ public class graficos implements Serializable {
 			serie.set(listalinea.get(i).getPais(), listalinea.get(i).getFarmacia());
 			barra.addSeries(serie);	
 		}
-		barra.setTitle("Sector Comercial");
+
 		barra.setLegendPosition("ne");
 		barra.setLegendPlacement(LegendPlacement.OUTSIDEGRID);
 		Axis x = barra.getAxis(AxisType.X);
@@ -387,34 +388,30 @@ public class graficos implements Serializable {
 	    public void buscarAum() {
 	    	try {
 				daoReporte daoReportes = new daoReporte();
-				reportepais = daoReportes.consultaParq();
-				if (codPais.equalsIgnoreCase("130")) {
-					reportepais = daoReportes.consultaXPais();
-					graficarBarrat();
-				}else {
-					graficarBarra();
-				}
-				resultado = "Proceso ejecutado";
+				reportecron = daoReportes.consultaAument();
+					graficarAum();
+							resultado = "Proceso ejecutado";
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
 	    
 	    
+	   	    
 	    public void graficarAum() {
-			torta2 = new PieChartModel();
+	    	torta = new PieChartModel();
 			daoReporte dao = new daoReporte();
-			listalinea = dao.consultaParq();
+			lista = dao.consultaAument();
 
 			for (ReporteInfor dr : lista) {
-				torta2.set(dr.getDatos(), dr.getContador());
+				torta.set(dr.getDatos(), dr.getContador());
 			}
 
-			torta2.setTitle("Paises con Mayor movilidad en los Parques");
-			torta2.setLegendPosition("e");
-			torta2.setFill(true);
-			torta2.setShowDataLabels(true);
-			torta2.setDiameter(300);
+			torta.setTitle("Provincias vs Años");
+			torta.setLegendPosition("e");
+			torta.setFill(true);
+			torta.setShowDataLabels(true);
+			torta.setDiameter(300);
 		}
 	    
 	    
